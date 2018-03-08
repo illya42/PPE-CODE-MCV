@@ -3,6 +3,8 @@ raw code
 
 FINIR :
 
+-faire en sorte que inscription / connexion etc... marche avec la BDD
+-faire 
 
 FAIRE LE MCV :
 
