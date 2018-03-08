@@ -6,7 +6,7 @@
  body {
  font-family:"times", times, serif;
  font-size:110%;
- font-variant: bold | small-caps;
+ font-variant: normal | small-caps;
  color : #223A5E;
  background-color: white;
  }

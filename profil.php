@@ -1,6 +1,22 @@
 <?php
+
+function connexion()
+    {
+    $con = mysqli_connect("localhost","root","","locationppe");
+    return $con;
+    }
+
+    function deconnexion ($con)
+    {
+        mysqli_close($con);
+    }
+
+    
 session_start();
+
 //connexion à la BDD
+$con = connexion();
+
 if(isset($_GET['idc']) AND $_GET['idc']>0)
 {
 	$getid= intval($_GET['idc']);

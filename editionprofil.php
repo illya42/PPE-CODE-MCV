@@ -1,6 +1,21 @@
 <?php
+
+function connexion()
+    {
+    $con = mysqli_connect("localhost","root","","locationppe");
+    return $con;
+    }
+
+    function deconnexion ($con)
+    {
+        mysqli_close($con);
+    }
+
 session_start();
+
 //connexion à la BDD
+$con = connexion();
+
 if(isset($_SESSION['idc']))
 {
 	$requser = $bdd->prepare("SELECT * FROM client where idc = ?");
@@ -28,7 +43,7 @@ if(isset($_SESSION['idc']))
 		$mdp2= sha1($_POST['newmdp2']);
 		if($mdp==$mdp2)
 		{
-			$insertmdp=$bdd->prepare("UPDATE client SET mdpc = ? WHERE idc = ?;")
+			$insertmdp=$bdd->prepare("UPDATE client SET mdpc = ? WHERE idc = ?");
 			$insertmdp->execute(array($mdp, $_SESSION['idc']));
 			header('Location: profil.php');
 		}
@@ -76,6 +91,6 @@ if(isset($_SESSION['idc']))
 }
 else
 {
-	header("Location: connexion.php")
+	header("Location: connexion.php");
 }
 ?>

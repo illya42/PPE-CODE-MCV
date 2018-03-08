@@ -1,4 +1,16 @@
 <?php
+
+function connexion()
+    {
+    $con = mysqli_connect("localhost","root","","locationppe");
+    return $con;
+    }
+
+    function deconnexion ($con)
+    {
+        mysqli_close($con);
+    }
+
 function connection()
 {
 	session_start();
