@@ -1,10 +1,10 @@
 <?php
 session_start();
 //connexion à la BDD
-if(isset($_GET['id']) AND $_GET['id']>0)
+if(isset($_GET['idc']) AND $_GET['idc']>0)
 {
-	$getid= intval($_GET['id']);
-	$requser=$bdd->prepare('SELECT * FROM membre WHERE id=?');
+	$getid= intval($_GET['idc']);
+	$requser=$bdd->prepare('SELECT * FROM client WHERE idc=?');
 	$requser->execute(array($getid));
 	$userinfo=$requser->fetch();
 ?>
@@ -26,7 +26,7 @@ if(isset($_GET['id']) AND $_GET['id']>0)
 		 Mail = <?php echo $userinfo['mail'];?>
 		 <br/>
 		<?php
-		if(isset($_SESSION['id']) AND $userinfo['id']==$_SESSION['id'])
+		if(isset($_SESSION['idc']) AND $userinfo['idc']==$_SESSION['idc'])
 		{
 			?>
 			<a href="#" > Editer mon profil </a>
