@@ -113,7 +113,7 @@ CREATE  INDEX I_FK_MATERIEL_TYPE_MATERIEL
 
 CREATE TABLE IF NOT EXISTS CLIENT
  (
-   IDC CHAR(32) NOT NULL  ,
+   IDC CHAR(32) NOT NULL auto_increment  ,
    CODE_TYPEC CHAR(32) NOT NULL  ,
    MDPC VARCHAR(255) NULL  ,
    MAIL VARCHAR(50) NULL  ,
@@ -366,3 +366,8 @@ ALTER TABLE PORTER
 ALTER TABLE PORTER 
   ADD FOREIGN KEY FK_PORTER_CONTRAT (NUMC)
       REFERENCES CONTRAT (NUMC) ;
+
+
+Insert into client (idc, code_typec, mdpc, mail, nomc, pseudo, prenomc, adressec, cpc, telc, datenaissc)
+ values
+ (null, null, null, vbhezcnk,ls@gmail.com, dupont, charles, 7 rue de parc, 75008, 0654365789, 19/12/31),
