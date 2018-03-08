@@ -2,19 +2,16 @@
 	<h2> Liste des contracts enregistres </h2>
 	<br/>
 	<table border = 1>
-		<tr> <td>Numero cours</td><td>Nom Candidats</td> <td>Prenom Candidats</td> <td>Nom Moniteur</td>
-			<td>Prenom Moniteur</td> <td>Date cours</td> <td>Heure debut</td> <td>heure fin</td></tr>
+		<tr> <td>Numero contract</td><td>Date debut</td> <td>Date fin</td> <td>Signature</td>
+			<td>Etat</td></tr>
 		<?php
 		foreach ($resultats as $unResultat) {
 			echo "<tr>
-			<td>".$unResultat['idcours']."</td>
-			<td>".$unResultat['nomcandidat']."</td>
-			<td>".$unResultat['prenomcandidat']."</td>
-			<td>".$unResultat['nommoniteur']."</td>
-			<td>".$unResultat['prenommoniteur']."</td>
-			<td>".$unResultat['datecours']."</td>
-			<td>".$unResultat['heuredebut']."</td>
-			<td>".$unResultat['heurefin']."</td>
+			<td>".$unResultat['numc']."</td>
+			<td>".$unResultat['date_debut']."</td>
+			<td>".$unResultat['date_fin']."</td>
+			<td>".$unResultat['signature']."</td>
+			<td>".$unResultat['etat']."</td>
 			</tr>";
 
 		}
