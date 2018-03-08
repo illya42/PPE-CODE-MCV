@@ -1,12 +1,17 @@
 <?php
 //SERT A CONTROLER / FAIRE DES VERIFICATIONS
+
 include("modele/modele.php");
+
 //	CONNECTION
+
 	function connectionC()
 	{
 	session_start();
+
 	//connexion à la BDD
 	$con = connexion();
+
 	if(isset($_POST['formconnexion']))
 	{
 		$mailconnect=htmlspecialchars($_POST['mailconnect']);
@@ -34,8 +39,10 @@ include("modele/modele.php");
 			$erreur="Tous les champs doivent être complétés !";
 		}
 	}
+
 	deconnexion($con);
 	}
+
 // DECONNECTION
 	function deconnection();
 	{ 
@@ -44,4 +51,5 @@ include("modele/modele.php");
 	session_destroy();
 	header=("Location: modele/modele.php")
 	}
+
 ?>
