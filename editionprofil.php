@@ -1,25 +1,25 @@
 <?php
 session_start();
 //connexion à la BDD
-if(isset($_SESSION['id']))
+if(isset($_SESSION['idc']))
 {
-	$requser = $bdd->prepare("SELECT * FROM membre where id = ?");
-	$requser->execute(array($_SESSION['id']));
+	$requser = $bdd->prepare("SELECT * FROM client where idc = ?");
+	$requser->execute(array($_SESSION['idc']));
 	$user=$requser->fetch();
 	if(isset($_POST['newpseudo']) AND !empty($_POST['newpseudo']) AND $_POST['newpseudo'] != $user['pseudo'])
 	{
 		$newpseudo = htmlspecialchars($_POST['newpseudo']);
-		$insertpseudo=$bdd->prepare("UPDATE membre SET pseudo = ? WHERE id = ?");
-		$insertpseudo->execute(array($newpseudo, $_SESSION['id']));
-		header('Location: profil.php?id='.$_SESSION['id']);
+		$insertpseudo=$bdd->prepare("UPDATE client SET pseudo = ? WHERE idc = ?");
+		$insertpseudo->execute(array($newpseudo, $_SESSION['idc']));
+		header('Location: profil.php?idc='.$_SESSION['idc']);
 	}
 
 	if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $user['mail'])
 	{
 		$newmail = htmlspecialchars($_POST['newmail']);
-		$insertmail=$bdd->prepare("UPDATE membre SET mail = ? WHERE id = ?");
-		$insertmail->execute(array($newmail, $_SESSION['id']));
-		header('Location: profil.php?id='.$_SESSION['id']);
+		$insertmail=$bdd->prepare("UPDATE client SET mail = ? WHERE idc = ?");
+		$insertmail->execute(array($newmail, $_SESSION['idc']));
+		header('Location: profil.php?idc='.$_SESSION['idc']);
 	}
 
 	if(isset($_POST['newmdp']) AND !empty($_POST['newmdp']) AND $_POST['newmdp'] != $user['mdp'] AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2']))
@@ -28,8 +28,8 @@ if(isset($_SESSION['id']))
 		$mdp2= sha1($_POST['newmdp2']);
 		if($mdp==$mdp2)
 		{
-			$insertmdp=$bdd->prepare("UPDATE membre SET mdp = ? WHERE id = ?");
-			$insertmdp->execute(array($mdp, $_SESSION['id']));
+			$insertmdp=$bdd->prepare("UPDATE client SET mdpc = ? WHERE idc = ?;")
+			$insertmdp->execute(array($mdp, $_SESSION['idc']));
 			header('Location: profil.php');
 		}
 		else
@@ -50,10 +50,7 @@ if(isset($_SESSION['id']))
 <html>
 <head>
 	<title>Inscription</title>
-
-	<meta charset="utf-8" />
-		<link href="style.css" rel="stylesheet" type="text/css" media="all" />
-		
+	<meta charset="utf-8">
 </head>
 <body>
 	<div align="center">
@@ -79,6 +76,6 @@ if(isset($_SESSION['id']))
 }
 else
 {
-	header("Location: connexion.php");
+	header("Location: connexion.php")
 }
 ?>
