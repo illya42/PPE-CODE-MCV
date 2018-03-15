@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS CLIENT
    MAIL VARCHAR(50) NULL  ,
    NOMC CHAR(32) NULL  ,
    PRENOMC CHAR(32) NULL  ,
-   ADRESSEC CHAR(32) NULL  ,
+   ADRESSEC VARCHAR(100) NULL  ,
    CPC CHAR(32) NULL  ,
    TELC int(32) NULL  ,
    DATENAISSC DATE NULL,  
@@ -280,3 +280,12 @@ ALTER TABLE PORTER
 ALTER TABLE PORTER 
   ADD FOREIGN KEY FK_PORTER_CONTRAT (NUMC)
       REFERENCES CONTRAT (NUMC) ;
+
+insert into TYPE_CLIENT values
+(1,"Particulier"),
+(2,"Professionnelle");
+
+insert into CLIENT values
+(null,2,"motdepasse1","jean655@hotmail.com","dupont","jean-mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
+(null,2,"motdepasse2","massala111@hotmail.com","ouandjli","jean-massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
+(null,2,"motdepasse3","jm_soprano@hotmail.com","soprano","michel","1 place de Renault","75018","0105748212","1991-08-01");
