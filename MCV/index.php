@@ -20,7 +20,9 @@
 			</a><br/><br/>
 			<a href="index.php?page=4"> Matériel
 			</a><br/><br/>
-			<a href="index.php?page=4"> Réservation
+			<a href="index.php?page=5"> Réservation
+			</a><br/><br/>
+			<a href="index.php?page=6"> Client
 			</a><br/><br/>
 	</center>
 
@@ -28,7 +30,9 @@
 		if (isset($_GET['page']))
 		{
 			$page = $_GET['page'];
-		}else{
+		}
+		else
+		{
 			$page = 0;
 		}
 		switch ($page) 
@@ -62,7 +66,7 @@
 					insertMaterielC($_POST);
 				}
 
-				$resultats = selectAllMaterielC("materiel");
+				$resultats = selectAllC ("materiel");
 				include("vue/vuemateriel.php");
 			break;
 
@@ -95,7 +99,7 @@
 					insertTechnicienC($_POST);
 				}
 
-				$resultats = selectAllTechnicienC("technicien");
+				$resultats = selectAllC ("technicien");
 				include("vue/vuetechnicien.php");
 			break;
 
@@ -128,11 +132,11 @@
 					insertContratC($_POST);
 				}
 
-				$resultats = selectAllContratC("contrat");
+				$resultats = selectAllC ("contrat");
 				include("vue/vuecontrat.php");
 			break;
 
-//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! BURAKERU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MATERIEL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
 
 			case 4:
 
@@ -161,11 +165,11 @@
 					insertMaterielC($_POST);
 				}
 
-				$resultats = selectAllMaterielC("materiel");
+				$resultats = selectAllC ("materiel");
 				include("vue/vuemateriel.php");
 			break;
 
-//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! BURAKERU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESERVATION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
 
 			case 5:
 
@@ -194,6 +198,43 @@
 					insertReservationC($_POST);
 				}
 
-				$resultats = selectAllReservationC("reservation");
+				$resultats = selectAllC ("reservation");
 				include("vue/vuereservation.php");
 			break;
+
+//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CLIENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+
+			case 6:
+
+			if(isset($_GET['action']) && isset($_GET['client']))
+				{
+					$action = $_GET['action'];
+					$idc = $_GET['idc'];
+					if($action == "X")
+					{
+						deleteClientC ($idc);
+					}
+					else if ($action == "E")
+					{
+						$resultat = selectWhereIdClientC ($idc);
+					}
+				}
+
+				if(isset($_POST['Modifier']))
+				{
+					updateClientC($_POST) ;
+					$resultat = null;
+				}
+
+				if(isset($_POST["Enregistrer"]))
+				{
+					insertClientC($_POST);
+				}
+
+				$resultats = selectAllC ("client");
+				include("vue/vueclient.php");
+				break;
+		}
+		?>
+	</body>
+	</html>
