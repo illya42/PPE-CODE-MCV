@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS RESERVATION
  (
    NUMR CHAR(32) NOT NULL  ,
    NUMP CHAR(32) NOT NULL  ,
-   IDC CHAR(32) NOT NULL  ,
+   idc CHAR(32) NOT NULL  ,
    NUMC CHAR(32) NULL  ,
    ETAT CHAR(32) NULL  ,
    DATER CHAR(32) NULL  
@@ -233,8 +233,8 @@ ALTER TABLE RESERVATION
 
 
 ALTER TABLE RESERVATION 
-  ADD FOREIGN KEY FK_RESERVATION_CLIENT (IDC)
-      REFERENCES CLIENT (IDC) ;
+  ADD FOREIGN KEY FK_RESERVATION_CLIENT (idc)
+      REFERENCES CLIENT (idc) ;
 
 
 ALTER TABLE RESERVATION 
@@ -289,3 +289,11 @@ insert into CLIENT values
 (null,2,"motdepasse1","jean655@hotmail.com","dupont","jean-mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
 (null,2,"motdepasse2","massala111@hotmail.com","ouandjli","jean-massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
 (null,2,"motdepasse3","jm_soprano@hotmail.com","soprano","michel","1 place de Renault","75018","0105748212","1991-08-01");
+
+insert into TYPE_MATERIEL values
+(1, "Bricolage"),
+(2, "Construction"),
+(3, "Jardinage");
+
+insert into MATERIEL values
+(1, 1, "FRAGILE");
