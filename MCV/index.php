@@ -18,11 +18,9 @@
 			</a><br/><br/>
 			<a href="index.php?page=3"> Contrat
 			</a><br/><br/>
-			<a href="index.php?page=4"> Matériel
+			<a href="index.php?page=4"> Réservation
 			</a><br/><br/>
-			<a href="index.php?page=5"> Réservation
-			</a><br/><br/>
-			<a href="index.php?page=6"> Client
+			<a href="index.php?page=5"> Client
 			</a><br/><br/>
 	</center>
 
@@ -41,17 +39,17 @@
 
 //						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Materiel !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
 
-			if(isset($_GET['action']) && isset($_GET['idc']))
+			if(isset($_GET['action']) && isset($_GET['NUM_SERIE']))
 				{
 					$action = $_GET['action'];
-					$idMateriel = $_GET['idc'];
+					$NUM_SERIE = $_GET['NUM_SERIE'];
 					if($action == "X")
 					{
-						deleteMaterielC($idc);
+						deleteMaterielC($NUM_SERIE);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdMaterielC ($idc);
+						$resultat = selectWhereIdMaterielC ($NUM_SERIE);
 					}
 				}
 
@@ -74,17 +72,17 @@
 
 			case 2:
 
-			if(isset($_GET['action']) && isset($_GET['idt']))
+			if(isset($_GET['action']) && isset($_GET['IDT']))
 				{
 					$action = $_GET['action'];
-					$idtechnicien = $_GET['idt'];
+					$IDT = $_GET['IDT'];
 					if($action == "X")
 					{
-						deleteTechnicienC($idt);
+						deleteTechnicienC($IDT);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdTechnicienC ($idt);
+						$resultat = selectWhereIdTechnicienC ($IDT);
 					}
 				}
 
@@ -107,17 +105,17 @@
 
 			case 3:
 
-			if(isset($_GET['action']) && isset($_GET['numc']))
+			if(isset($_GET['action']) && isset($_GET['NUMC']))
 				{
 					$action = $_GET['action'];
-					$idcontrat = $_GET['numc'];
+					$NUMC = $_GET['NUMC'];
 					if($action == "X")
 					{
-						deleteContratC($numc);
+						deleteContratC($NUMC);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdContratC ($numc);
+						$resultat = selectWhereIdContratC ($NUMC);
 					}
 				}
 
@@ -136,54 +134,22 @@
 				include("vue/vuecontrat.php");
 			break;
 
-//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MATERIEL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
-
-			case 4:
-
-			if(isset($_GET['action']) && isset($_GET['materiel']))
-				{
-					$action = $_GET['action'];
-					$idmateriel = $_GET['num_serie'];
-					if($action == "X")
-					{
-						deleteMaterielC($idc);
-					}
-					else if ($action == "E")
-					{
-						$resultat = selectWhereIdMaterielC ($idc);
-					}
-				}
-
-				if(isset($_POST['Modifier']))
-				{
-					updateMaterielC($_POST) ;
-					$resultat = null;
-				}
-
-				if(isset($_POST["Enregistrer"]))
-				{
-					insertMaterielC($_POST);
-				}
-
-				$resultats = selectAllC ("materiel");
-				include("vue/vuemateriel.php");
-			break;
 
 //						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESERVATION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
 
-			case 5:
+			case 4:
 
 			if(isset($_GET['action']) && isset($_GET['reservation']))
 				{
 					$action = $_GET['action'];
-					$idreservation = $_GET['numr'];
+					$NUMR = $_GET['NUMR'];
 					if($action == "X")
 					{
-						deleteReservationC($numr);
+						deleteReservationC($NUMR);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdReservationC ($numr);
+						$resultat = selectWhereIdReservationC ($NUMR);
 					}
 				}
 
@@ -204,19 +170,19 @@
 
 //						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CLIENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
 
-			case 6:
+			case 5:
 
 			if(isset($_GET['action']) && isset($_GET['client']))
 				{
 					$action = $_GET['action'];
-					$idc = $_GET['idc'];
+					$IDC = $_GET['IDC'];
 					if($action == "X")
 					{
-						deleteClientC ($idc);
+						deleteClientC ($IDC);
 					}
 					else if ($action == "E")
 					{
-						$resultat = selectWhereIdClientC ($idc);
+						$resultat = selectWhereIdClientC ($IDC);
 					}
 				}
 
