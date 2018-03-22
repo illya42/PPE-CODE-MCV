@@ -19,51 +19,28 @@
 
 //                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CLIENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                       //
 
-    function insertClientC ($idc)
+    function insertClientC ($IDC)
     {
-        insertClientM ($idc);
+        insertClientM ($IDC);
     }
 
-    function deleteClientC ($idc)
+    function deleteClientC ($IDC)
     {
         //verification de l'idClient
-        deleteClientM ($idc);
+        deleteClientM ($IDC);
     }
 
-    function selectWhereIdClientC ($idc)
+    function selectWhereIdClientC ($IDC)
     {
         //verification de l'idClient
 
-        $resultat = selectWhereIdClientM ($idc);
+        $resultat = selectWhereIdClientM ($IDC);
         return $resultat;
     }
 
     function updateClientC ($tab)
     {
         updateClientM ($tab);
-    }
-
-//                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! NEWS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                        //
-
-    function insertNewsC ($tab)
-    {
-        insertNewsModel($tab);
-    }
-
-    function deleteNewsC ($idnews)
-    {
-        deleteNewsModel ($idnews);
-    }
-
-    function selectWhereIdNewsC ($idnews)
-    {
-        $resultat = selectWhereIdNewsModel ($idnews);
-        return $resultat;
-    }
-
-    function updateNewsC ($tab)
-    {
-        updateNewsModel ($tab);
     }
 
 //                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! TECHNICIEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     //
@@ -73,14 +50,14 @@
         insertTechnicienM ($tab);
     }
 
-    function deleteTechnicienC ($idt)
+    function deleteTechnicienC ($IDT)
     {
-        deleteProduitModel ($idt);
+        deleteProduitModel ($IDT);
     }
 
-    function selectWhereIdTechnicienC ($idt)
+    function selectWhereIdTechnicienC ($IDT)
     {
-        $resultat = selectWhereIdTechnicien ($idt);
+        $resultat = selectWhereIdTechnicien ($IDT);
         return $resultat;
     }
 
@@ -96,14 +73,14 @@
         insertContratM ($tab);
     }
 
-    function deleteContratC ($numc)
+    function deleteContratC ($NUMC)
     {
-        deleteMessageModel ($numc);
+        deleteMessageModel ($NUMC);
     }
 
-    function selectWhereIdContratC ($numc)
+    function selectWhereIdContratC ($NUMC)
     {
-        $resultat = selectWhereIdContratM ($numc);
+        $resultat = selectWhereIdContratM ($NUMC);
         return $resultat;
     }
 
@@ -119,14 +96,14 @@
         insertMaterielM ($tab);
     }
 
-    function deleteMaterielC ($num_serie)
+    function deleteMaterielC ($NUM_SERIE)
     {
-        deleteMaterielM ($num_serie);
+        deleteMaterielM ($NUM_SERIE);
     }
 
-    function selectWhereIdMaterielC ($num_serie)
+    function selectWhereIdMaterielC ($NUM_SERIE)
     {
-        $resultat = selectWhereIdMaterielM ($num_serie);
+        $resultat = selectWhereIdMaterielM ($NUM_SERIE);
         return $resultat;
     }
 
@@ -142,14 +119,14 @@
         insertReservationM ($tab);
     }
 
-    function deleteReservationC ($numr)
+    function deleteReservationC ($NUMR)
     {
-        deleteReservationM ($numr);
+        deleteReservationM ($NUMR);
     }
 
-    function selectWhereIdReservationC ($numr)
+    function selectWhereIdReservationC ($NUMR)
     {
-        $resultat = selectWhereIdReservationM ($numr);
+        $resultat = selectWhereIdReservationM ($NUMR);
         return $resultat;
     }
 
