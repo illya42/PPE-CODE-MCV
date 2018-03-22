@@ -30,33 +30,32 @@
         $requete = "insert into client values
             (
             null,
-            '".$tab["idc"]."',
-            '".$tab["nomc"]."',
-            '".$tab["prenomc"]."',
-            '".$tab["pseudo"]."',
-            '".$tab["mail"]."',
-            '".$tab["adressec"]."',
-            '".$tab["datenaissc"]."',
-            '".$tab["telc"]."',
-            '".$tab["cpc"]."'
+            '".$tab["IDC"]."',
+            '".$tab["NOMC"]."',
+            '".$tab["PRENOMC"]."',
+            '".$tab["MAIL"]."',
+            '".$tab["ADRESSEC"]."',
+            '".$tab["DATENAISSC"]."',
+            '".$tab["TELC"]."',
+            '".$tab["CPC"]."'
         );";
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-     function deleteClientM ($idc)
+     function deleteClientM ($IDC)
     {
         $con = connexion();
-        $requete = "delete from client where idc = ".$idc.";";
+        $requete = "delete from client where IDC = ".$IDC.";";
         
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-    function selectWhereIdClientM ($idc)
+    function selectWhereIdClientM ($IDC)
     {
         $con = connexion();
-        $requete = "select * from client where idc = ".$idc.";";
+        $requete = "select * from client where IDC = ".$IDC.";";
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
         deconnexion($con);
@@ -68,16 +67,15 @@
         $requete = 
         "update client
         set 
-        idc =           '".$tab['idc']."', 
-        nomc =          '".$tab['nomc']."',
-        prenomc =       '".$tab['prenomc']."',
-        pseudo =        '".$tab['pseudo']."',
-        mail =          '".$tab['mail']."',
-        adressec =      '".$tab['adressec']."',
-        datenaissc =    '".$tab['datenaissc']."',
-        telc =          '".$tab['telc']."',
-        cpc =           '".$tab['cpc']."'
-        where idc =     '".$tab['idc']."'
+        IDC =           '".$tab['IDC']."', 
+        NOMC =          '".$tab['NOMC']."',
+        PRENOMC =       '".$tab['PRENOMC']."',
+        MAIL =          '".$tab['MAIL']."',
+        ADRESSEC =      '".$tab['ADRESSEC']."',
+        DATENAISSC =    '".$tab['DATENAISSC']."',
+        TELC =          '".$tab['TELC']."',
+        CPC =           '".$tab['CPC']."'
+        where IDC =     '".$tab['IDC']."'
         ;";
     
         mysqli_query($con, $requete);
@@ -91,28 +89,28 @@
         $requete = "insert into technicien values
             (
             null,
-            '".$tab["idt"]."',
-            '".$tab["nomt"]."',
-            '".$tab["prenomt"]."',
-            '".$tab["mailt"]."'
+            '".$tab["IDT"]."',
+            '".$tab["NOMT"]."',
+            '".$tab["PRENOMT"]."',
+            '".$tab["MAILT"]."'
         );";
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-     function deleteTechnicienM ($idt)
+     function deleteTechnicienM ($IDT)
     {
         $con = connexion();
-        $requete = "delete from technicien where idt = ".$idt.";";
+        $requete = "delete from technicien where IDT = ".$IDT.";";
         
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-    function selectWhereIdTechnicienM ($idt)
+    function selectWhereIdTechnicienM ($IDT)
     {
         $con = connexion();
-        $requete = "select * from technicien where idt = ".$idt.";";
+        $requete = "select * from technicien where IDT = ".$IDT.";";
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
         deconnexion($con);
@@ -124,11 +122,11 @@
         $requete = 
         "update technicien
         set 
-        idt =           '".$tab['idt'].       "', 
-        nomt =          '".$tab['nomt'].             "',
-        prenomt =       '".$tab['prenomt'].       "',
-        mailt =         '".$tab['mailt'].         "',
-        where idt =     '".$tab['idt']."'
+        IDT =           '".$tab['IDT'].       "', 
+        NOMT =          '".$tab['NOMT'].             "',
+        PRENOMT =       '".$tab['PRENOMT'].       "',
+        MAILT =         '".$tab['MAILT'].         "',
+        where IDT =     '".$tab['IDT']."'
         ;";
     
         mysqli_query($con, $requete);
@@ -142,29 +140,29 @@
         $requete = "insert into contrat values
             (
             null,
-            '".$tab["numc"]."',
-            '".$tab["date_debut"]."',
-            '".$tab["date_fin"]."',
-            '".$tab["signature"]."',
-            '".$tab["etat"]."'
+            '".$tab["NUMC"]."',
+            '".$tab["DATE_DEBUT"]."',
+            '".$tab["DATE_FIN"]."',
+            '".$tab["SIGNATURE"]."',
+            '".$tab["ETAT"]."'
             );";
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-     function deleteContratM ($numc)
+     function deleteContratM ($NUMC)
     {
         $con = connexion();
-        $requete = "delete from contrat where numc = ".$numc.";";
+        $requete = "delete from contrat where NUMC = ".$NUMC.";";
         
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-    function selectWhereIdContratM ($numc)
+    function selectWhereIdContratM ($NUMC)
     {
         $con = connexion();
-        $requete = "select * from client where numc = ".$numc.";";
+        $requete = "select * from client where NUMC = ".$NUMC.";";
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
         deconnexion($con);
@@ -176,12 +174,12 @@
         $requete = 
         "update contrat
         set 
-        numc =          '".$tab['idc'].       "', 
-        date_debut =    '".$tab['date_debut'].             "',
-        date_fin =      '".$tab['date_fin'].       "',
-        signature =     '".$tab['signature'].         "',
-        etat =          '".$tab['etat'].         "',
-        where numc =    '".$tab['numc']."'
+        NUMC =          '".$tab['NUMC'].       "', 
+        DATE_DEBUT =    '".$tab['DATE_DEBUT'].             "',
+        DATE_FIN =      '".$tab['DATE_FIN'].       "',
+        SIGNATURE =     '".$tab['SIGNATURE'].         "',
+        ETAT =          '".$tab['ETAT'].         "',
+        where NUMC =    '".$tab['NUMC']."'
         ;";
     
         mysqli_query($con, $requete);
@@ -195,26 +193,26 @@
         $requete = "insert into materiel values
             (
             null,
-            '".$tab["num_serie"]."',
-            '".$tab["notice_entretien"]."'
+            '".$tab["NUM_SERIE"]."',
+            '".$tab["NOTICE_ENTRETIEN"]."'
        		);";
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-     function deleteMaterielM ($num_serie)
+     function deleteMaterielM ($NUM_SERIE)
     {
         $con = connexion();
-        $requete = "delete from materiel where num_serie = ".$num_serie.";";
+        $requete = "delete from materiel where NUM_SERIE = ".$NUM_SERIE.";";
         
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-    function selectWhereIdMaterielM ($num_serie)
+    function selectWhereIdMaterielM ($NUM_SERIE)
     {
         $con = connexion();
-        $requete = "select * from materiel where num_serie = ".$num_serie.";";
+        $requete = "select * from materiel where NUM_SERIE = ".$NUM_SERIE.";";
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
         deconnexion($con);
@@ -226,9 +224,9 @@
         $requete = 
         "update materiel
         set 
-        num_serie =                 '".$tab['num_serie'].       "', 
-        notice_entretien =          '".$tab['notice_entretien'].             "'
-        where num_serie =           '".$tab['num_serie']."'
+        NUM_SERIE =                 '".$tab['NUM_SERIE'].       "', 
+        NOTICE_ENTRETIEN =          '".$tab['NOTICE_ENTRETIEN'].             "'
+        where NUM_SERIE =           '".$tab['NUM_SERIE']."'
         ;";
     
         mysqli_query($con, $requete);
@@ -242,27 +240,27 @@
         $requete = "insert into reservation values
             (
             null,
-            '".$tab["numr"]."',
-            '".$tab["etat"]."',
-            '".$tab["dater"]."'
+            '".$tab["NUMR"]."',
+            '".$tab["ETAT"]."',
+            '".$tab["DATER"]."'
        		);";
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-     function deleteReservationM ($numr)
+     function deleteReservationM ($NUMR)
     {
         $con = connexion();
-        $requete = "delete from reservation where numr = ".$numr.";";
+        $requete = "delete from reservation where NUMR = ".$NUMR.";";
         
         
         mysqli_query($con, $requete);
         deconnexion($con);
     }
-    function selectWhereIdReservationM ($numr)
+    function selectWhereIdReservationM ($NUMR)
     {
         $con = connexion();
-        $requete = "select * from reservation where numr = ".$numr.";";
+        $requete = "select * from reservation where numr = ".$NUMR.";";
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
         deconnexion($con);
@@ -274,10 +272,10 @@
         $requete = 
         "update reservation
         set 
-        numr =              '".$tab['numr'].       "', 
-        etat =              '".$tab['etat'].             "',
-        dater =             '".$tab['dater'].             "'
-        where numr =        '".$tab['numr']."'
+        NUMR =              '".$tab['NUMR'].       "', 
+        ETAT =              '".$tab['ETAT'].             "',
+        DATER =             '".$tab['DATER'].             "'
+        where NUMR =        '".$tab['NUMR']."'
         ;";
     
         mysqli_query($con, $requete);
