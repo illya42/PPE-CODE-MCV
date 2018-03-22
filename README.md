@@ -6,7 +6,7 @@ FINIR :
 -faire en sorte que inscription / connexion etc... marche avec la BDD
 -faire 
 
-FAIRE LE MCV :
+FAIRE LE MCV [Fini à 80%]
 
 Modele : où il y a toutes les fonctions relié à la BDD
 
@@ -20,14 +20,15 @@ FAIRE POUR :
 
 *CLIENT
 ==> inscription / connection / deconnection / éditer profil / lister
+==> [
 
 *CONTRAT
 ==> créer un nouveau contrat / supprimer / éditer / lister
 
-*MATERIEL
+*MATERIEL - OK
 ==> lister / ajouter un matériel / supprimer / éditer
 
-*TECHNICIEN
+*TECHNICIEN 
 ==> inscription / connection / deconnection / éditer profil / lister
 
 *RESERVATION
