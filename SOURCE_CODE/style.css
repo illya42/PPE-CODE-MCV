@@ -1,0 +1,40 @@
+ html, body {
+ margin: 0;
+ padding: 0;
+ }
+
+ body {
+ font-family:"times", times, serif;
+ font-size:110%;
+ font-variant: normal | small-caps;
+ color : #223A5E;
+ background-color: white;
+ }
+
+table {
+ border-width:6px;
+ border-style:solid;
+ border-color:#ff9933;
+ }
+
+ td {
+ border-width:2px;
+ border-style:dotted;
+ border-color: #696969;
+ }
+
+h1 {
+ font-family:"arial", arial, serif;
+ font-size:200%;
+ font-variant: normal | small-caps;
+ color : 	#ED7448;
+ background-color: #696969;
+ }
+
+h2 {
+ font-family:"arial", arial, serif;
+ font-size:150%;
+ font-variant: normal | small-caps;
+ color : #ED7448;
+ background-color: #696969;
+ }
