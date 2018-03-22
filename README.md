@@ -20,6 +20,9 @@
 *MATERIEL -[ !!! OK !!! ][ !!! METTRE DES IMAGES !!! ]
 ==> lister / ajouter un matériel / supprimer / éditer
 
+		Les images doivent être mis dans un dossier "image" à côté des autres dossiers
+		Les images sont dans CODE_SOURCE
+
 *TECHNICIEN 
 ==> inscription / connection / deconnection / éditer profil / lister
 
