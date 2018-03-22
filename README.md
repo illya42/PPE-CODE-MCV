@@ -4,9 +4,9 @@ raw code
 FINIR :
 
 -faire en sorte que inscription / connexion etc... marche avec la BDD
--faire 
+- [!!! REMPLIR LA BDD !!!]
 
-FAIRE LE MCV [Fini à 80%]
+FAIRE LE MCV [Fini à 60%]
 
 Modele : où il y a toutes les fonctions relié à la BDD
 
@@ -20,12 +20,11 @@ FAIRE POUR :
 
 *CLIENT
 ==> inscription / connection / deconnection / éditer profil / lister
-==> [
 
 *CONTRAT
 ==> créer un nouveau contrat / supprimer / éditer / lister
 
-*MATERIEL - OK
+*MATERIEL -[ !!! OK !!! ][ !!! METTRE DES IMAGES !!! ]
 ==> lister / ajouter un matériel / supprimer / éditer
 
 *TECHNICIEN 
