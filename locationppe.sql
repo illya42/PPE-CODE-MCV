@@ -81,7 +81,11 @@ CREATE TABLE IF NOT EXISTS MATERIEL
  (
    NUM_SERIE CHAR(32) NOT NULL  ,
    CODE_TYPEM CHAR(32) NOT NULL  ,
-   NOTICE_ENTRETIEN CHAR(32) NULL  
+   NOMM VARCHAR(32) ,
+   NOTICE_ENTRETIEN CHAR(32) NULL ,
+   PRIX_JOUR VARCHAR(32) ,
+   POIDS VARCHAR(32)
+
    , PRIMARY KEY (NUM_SERIE) 
  );
 
@@ -118,7 +122,7 @@ CREATE TABLE IF NOT EXISTS CONTRAT
    DATE_DEBUT CHAR(32) NULL  ,
    DATE_FIN CHAR(32) NULL  ,
    SIGNATURE CHAR(32) NULL  ,
-   ETAT CHAR(32) NULL  
+   ETAT VARCHAR(32) NULL  
    , PRIMARY KEY (NUMC) 
  );
 
@@ -129,10 +133,10 @@ CREATE TABLE IF NOT EXISTS CONTRAT
 CREATE TABLE IF NOT EXISTS TECHNICIEN
  (
    IDT CHAR(32) NOT NULL  ,
-   PSEUDOT CHAR(32)  NULL ,
    MDPT VARCHAR(255) NULL  ,
    PRENOMT CHAR(32) NULL  ,
-   NOMT CHAR(32) NULL  
+   NOMT CHAR(32) NULL  ,
+   MAILT VARCHAR(50)
    , PRIMARY KEY (IDT) 
  );
 
@@ -144,7 +148,7 @@ CREATE TABLE IF NOT EXISTS RESERVATION
  (
    NUMR CHAR(32) NOT NULL  ,
    NUMP CHAR(32) NOT NULL  ,
-   idc CHAR(32) NOT NULL  ,
+   IDC CHAR(32) NOT NULL  ,
    NUMC CHAR(32) NULL  ,
    ETAT CHAR(32) NULL  ,
    DATER CHAR(32) NULL  
@@ -286,9 +290,9 @@ insert into TYPE_CLIENT values
 (2,"Professionnelle");
 
 insert into CLIENT values
-(null,2,"motdepasse1","jean655@hotmail.com","dupont","jean-mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
-(null,2,"motdepasse2","massala111@hotmail.com","ouandjli","jean-massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
-(null,2,"motdepasse3","jm_soprano@hotmail.com","soprano","michel","1 place de Renault","75018","0105748212","1991-08-01");
+(null,2,"motdepasse1","jean655@hotmail.com","DUPONT","Jean-Mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
+(null,2,"motdepasse2","massala111@hotmail.com","OUALA","Jean-Massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
+(null,2,"motdepasse3","jm_soprano@hotmail.com","SOPRANO","Michel","1 place de Renault","75018","0105748212","1991-08-01");
 
 insert into TYPE_MATERIEL values
 (1, "Bricolage"),
@@ -296,4 +300,16 @@ insert into TYPE_MATERIEL values
 (3, "Jardinage");
 
 insert into MATERIEL values
-(1, 1, "FRAGILE");
+(1, 1, "Marteau-piqueur", "Ne pas manger cru", "110,99", "18");
+
+insert into TECHNICIEN values
+(1, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
+
+insert into CONTRAT values
+(1, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
+
+insert into PERIODE values
+(1, "2015-01-03", "2015-06-21");
+
+insert into RESERVATION values
+(1, 1, 1, 1, "OK", "2016-01-06");
