@@ -11,17 +11,17 @@
 		foreach ($resultats as $unResultat) 
 		{
 			echo "<tr>
-			<td>".$unResultat['numc']."</td>
-			<td>".$unResultat['date_debut']."</td>
-			<td>".$unResultat['date_fin']."</td>
-			<td>".$unResultat['signature']."</td>
-			<td>".$unResultat['etat']."</td>
+			<td>".$unResultat['NUMC']."</td>
+			<td>".$unResultat['DATE_DEBUT']."</td>
+			<td>".$unResultat['DATE_FIN']."</td>
+			<td>".$unResultat['SIGNATURE']."</td>
+			<td>".$unResultat['ETAT']."</td>
 			</tr>
 
 
-			<td> 	<a href='index.php?page=6&action=X&idc=".$unResultat['idc']."'>
+			<td> 	<a href='index.php?page=6&action=X&NUMC=".$unResultat['NUMC']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=6&action=E&idc=".$unResultat['idc']."'>
+							<a href='index.php?page=6&action=E&NUMC=".$unResultat['NUMC']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 		}

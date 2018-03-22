@@ -2,16 +2,20 @@
 	<h2> Liste des materiels enregistres </h2>
 	<br/>
 	<table border = 1>
-		<tr> <td>Numero de série</td><td>Notice d'entretien</td></tr>
+		<tr> 	<td>Numero de série</td>
+				<td>Notice d'entretien</td>
+				<td>Actions</td>
+		</tr>
 		<?php
 		foreach ($resultats as $unResultat) {
 			echo "<tr>
-			<td>".$unResultat['num_serie']."</td>
-			<td>".$unResultat['notice_entretien']."</td>
-			</tr>
-			<td> 	<a href='index.php?page=1&action=X&idc=".$unResultat['idc']."'>
+			<td>".$unResultat['NUM_SERIE']."</td>
+			<td>".$unResultat['NOTICE_ENTRETIEN']."</td>
+			<td>
+			
+			<a href='index.php?page=1&action=X&NUM_SERIE=".$unResultat['NUM_SERIE']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=1&action=E&idc=".$unResultat['idc']."'>
+							<a href='index.php?page=1&action=E&NUM_SERIE=".$unResultat['NUM_SERIE']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 
@@ -23,7 +27,7 @@
 				<form method="post" action="">
 
 					<table border= 7 >
-						<tr><td>Notice d'entretien : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['notice_entretien'] ; ?>"></td></tr>
+						<tr><td>Notice d'entretien : </td> <td> <input type="text" name="NOTICE_ENTRETIEN" value="<?php if(isset($resultat)) echo $resultat['NOTICE_ENTRETIEN'] ; ?>"></td></tr>
 						
 						<tr>
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
@@ -32,6 +36,6 @@
 						</tr>
 
 					</table>
-					<input type="hidden" name="num_serie" value="<?php if(isset($resultat)) echo $resultat['num_serie'] ; ?>">
+					<input type="hidden" name="NUM_SERIE" value="<?php if(isset($resultat)) echo $resultat['NUM_SERIE'] ; ?>">
 				</form>
 </center>
