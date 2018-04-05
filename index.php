@@ -11,7 +11,7 @@
 </head>
 <body>
 	<left>
-		<h1> Menu </h1>
+		<h1> Roilles SA </h1>
 		<table border = 0>
 		<tr>
 			<tr><td>
@@ -28,6 +28,9 @@
 			</a></td></tr>
 			<tr><td>
 			<a href="index.php?page=5"> Client
+			</a></td></tr>
+			<tr><td>
+			<a href="index.php?"> Retour à l'accueil
 			</a></td></tr>
 		</tr>
 
@@ -210,7 +213,24 @@
 				$resultats = selectAllC ("client");
 				include("vue/vueclient.php");
 				break;
+
 		}
 		?>
+
+	<center>
+		<p>
+		<img src='image/roilles.png' width='200' height='100' >
+		</br>
+		
+		Raison sociale :
+		Roilles SA
+		</br>
+		Capital :
+		Société anonyme au capital de 125 000€
+		</br>
+		Siège social : 15, place de la Liberté 18010 Bourges CEDEX
+		</p>
+	</center>
+
 	</body>
 	</html>
