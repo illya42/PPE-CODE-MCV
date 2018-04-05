@@ -1,22 +1,24 @@
-<center>
+<left>
 	<h2> Liste des techniciens </h2>
 	<br/>
 	<table border = 1>
 		<tr><td>ID technicien</td>
 			<td>Nom</td>
 			<td>Prenom</td>
-			<td>mail</td></tr>
+			<td>Mail</td>
+			<td>Actions</td>
+		</tr>
 		<?php
 		foreach ($resultats as $unResultat) {
 			echo "<tr>
-			<td>".$unResultat['idt']."</td>
-			<td>".$unResultat['nomt']."</td>
-			<td>".$unResultat['prenomt']."</td>
-			<td>".$unResultat['mailt']."</td>
-			</tr>
-			<td> 	<a href='index.php?page=2&action=X&idc=".$unResultat['idc']."'>
+			<td>".$unResultat['IDT']."</td>
+			<td>".$unResultat['NOMT']."</td>
+			<td>".$unResultat['PRENOMT']."</td>
+			<td>".$unResultat['MAILT']."</td>
+			
+			<td> 	<a href='index.php?page=2&action=X&IDT=".$unResultat['IDT']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=2&action=E&idc=".$unResultat['idc']."'>
+							<a href='index.php?page=2&action=E&IDT=".$unResultat['IDT']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 		}
@@ -27,9 +29,9 @@
 				<form method="post" action="">
 
 					<table border= 7>
-						<tr><td>Nom : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nomc'] ; ?>"></td></tr>
-						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" value="<?php if(isset($resultat)) echo $resultat['prenomc'] ; ?>"></td></tr>
-						<tr><td>Mail : </td> <td> <input type="text" name="mail" value="<?php if(isset($resultat)) echo $resultat['mail'] ; ?>"></td></tr>
+						<tr><td>Nom : </td> <td> <input type="text" name="NOMT" value="<?php if(isset($resultat)) echo $resultat['NOMT'] ; ?>"></td></tr>
+						<tr><td>Prénom : </td> <td> <input type="text" name="PRENOMT" value="<?php if(isset($resultat)) echo $resultat['PRENOMT'] ; ?>"></td></tr>
+						<tr><td>Mail : </td> <td> <input type="text" name="MAILT" value="<?php if(isset($resultat)) echo $resultat['MAILT'] ; ?>"></td></tr>
 
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
 							<td> <input type="submit" name="Enregistrer" value="Enregistrer"> 
@@ -37,6 +39,6 @@
 						</tr>
 
 					</table>
-					<input type="hidden" name="idt" value="<?php if(isset($resultat)) echo $resultat['idt'] ; ?>">
+					<input type="hidden" name="IDT" value="<?php if(isset($resultat)) echo $resultat['IDT'] ; ?>">
 				</form>
-</center>
+</left>

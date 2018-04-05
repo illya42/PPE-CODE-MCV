@@ -1,4 +1,4 @@
-<center>
+<left>
 	<h2> Liste des clients enregistres </h2>
 	<br/>
 	<table border = 1>
@@ -30,9 +30,9 @@
 			<td>".$unResultat['DATENAISSC']."</td>
 			
 			
-			<td> 	<a href='index.php?page=6&action=X&IDC=".$unResultat['IDC']."'>
+			<td> 	<a href='index.php?page=5&action=X&IDC=".$unResultat['IDC']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=6&action=E&IDC=".$unResultat['IDC']."'>
+							<a href='index.php?page=5&action=E&IDC=".$unResultat['IDC']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 		}
@@ -59,4 +59,4 @@
 					</table>
 					<input type="hidden" name="IDC" value="<?php if(isset($resultat)) echo $resultat['IDC'] ; ?>">
 				</form>
-</center>
+</left>

@@ -10,19 +10,29 @@
 	<title> Roilles : Location et maintenance </title>
 </head>
 <body>
-	<center>
+	<left>
 		<h1> Menu </h1>
+		<table border = 0>
+		<tr>
+			<tr><td>
 			<a href="index.php?page=1"> Materiel
-			</a><br/><br/>
+			</a></td></tr>
+			<tr><td>
 			<a href="index.php?page=2"> Technicien
-			</a><br/><br/>
+			</a></td></tr>
+			<tr><td>
 			<a href="index.php?page=3"> Contrat
-			</a><br/><br/>
+			</a></td></tr>
+			<tr><td>
 			<a href="index.php?page=4"> Réservation
-			</a><br/><br/>
+			</a></td></tr>
+			<tr><td>
 			<a href="index.php?page=5"> Client
-			</a><br/><br/>
-	</center>
+			</a></td></tr>
+		</tr>
+
+		</table>
+	</left>
 
 	<?php
 		if (isset($_GET['page']))

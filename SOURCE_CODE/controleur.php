@@ -57,7 +57,7 @@
 
     function selectWhereIdTechnicienC ($IDT)
     {
-        $resultat = selectWhereIdTechnicien ($IDT);
+        $resultat = selectWhereIdTechnicienM ($IDT);
         return $resultat;
     }
 

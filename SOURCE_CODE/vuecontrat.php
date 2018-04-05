@@ -1,4 +1,4 @@
-<center>
+<left>
 	<h2> Liste des contracts enregistres </h2>
 	<br/>
 	<table border = 1>
@@ -6,7 +6,9 @@
 			<td>Date debut</td>
 			<td>Date fin</td>
 			<td>Signature</td>
-			<td>Etat</td></tr>
+			<td>Etat</td>
+			<td>Actions</td>
+		</tr>
 		<?php
 		foreach ($resultats as $unResultat) 
 		{
@@ -16,12 +18,12 @@
 			<td>".$unResultat['DATE_FIN']."</td>
 			<td>".$unResultat['SIGNATURE']."</td>
 			<td>".$unResultat['ETAT']."</td>
-			</tr>
+			
 
 
-			<td> 	<a href='index.php?page=6&action=X&NUMC=".$unResultat['NUMC']."'>
+			<td> 	<a href='index.php?page=3&action=X&NUMC=".$unResultat['NUMC']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=6&action=E&NUMC=".$unResultat['NUMC']."'>
+							<a href='index.php?page=3&action=E&NUMC=".$unResultat['NUMC']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 		}
@@ -32,10 +34,10 @@
 				<form method="post" action="">
 
 					<table border= 7 >
-						<tr><td>Date de début : </td> <td> <input type="date" name="date_debut" value="<?php if(isset($resultat)) echo $resultat['date_debut'] ; ?>"></td></tr>
-						<tr><td>Date de fin : </td> <td> <input type="date" name="date_fin" value="<?php if(isset($resultat)) echo $resultat['date_fin'] ; ?>"></td></tr>
-						<tr><td>Signature : </td> <td> <input type="text" name="signature" value="<?php if(isset($resultat)) echo $resultat['signature'] ; ?>"></td></tr>
-						<tr><td>État : </td> <td> <input type="text" name="etat" value="<?php if(isset($resultat)) echo $resultat['etat'] ; ?>"></td></tr>
+						<tr><td>Date de début : </td> <td> <input type="date" name="DATE_DEBUT" value="<?php if(isset($resultat)) echo $resultat['DATE_DEBUT'] ; ?>"></td></tr>
+						<tr><td>Date de fin : </td> <td> <input type="date" name="DATE_FIN" value="<?php if(isset($resultat)) echo $resultat['DATE_FIN'] ; ?>"></td></tr>
+						<tr><td>Signature : </td> <td> <input type="text" name="SIGNATURE" value="<?php if(isset($resultat)) echo $resultat['SIGNATURE'] ; ?>"></td></tr>
+						<tr><td>État : </td> <td> <input type="text" name="ETAT" value="<?php if(isset($resultat)) echo $resultat['ETAT'] ; ?>"></td></tr>
 	
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
 							<td> <input type="submit" name="Enregistrer" value="Enregistrer"> 
@@ -43,6 +45,6 @@
 						</tr>
 
 					</table>
-					<input type="hidden" name="numc" value="<?php if(isset($resultat)) echo $resultat['numc'] ; ?>">
+					<input type="hidden" name="NUMC" value="<?php if(isset($resultat)) echo $resultat['NUMC'] ; ?>">
 				</form>
-</center>
+</left>
