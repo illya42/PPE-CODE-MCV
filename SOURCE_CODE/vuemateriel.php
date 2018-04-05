@@ -14,7 +14,7 @@
 		<?php
 		foreach ($resultats as $unResultat) {
 			echo "<tr>
-			<td>IMAGE DU MARTEAU PIQUEUR</td>
+			<td><a href='index.php?page=1&NUM_SERIE=".$unResultat['NUM_SERIE']."'><img src='image/marteaupiqueur.jpg' width = '200' height = '120'> </a> </td>
 			<td>".$unResultat['NUM_SERIE']."</td>
 			<td>".$unResultat['CODE_TYPEM']."</td>
 			<td>".$unResultat['NOMM']."</td>
@@ -37,7 +37,9 @@
 				<form method="post" action="">
 
 					<table border= 7 >
+
 						<tr><td>Article : </td> <td> <input type="text" name="NOMM" value="<?php if(isset($resultat)) echo $resultat['NOMM'] ; ?>"></td></tr>
+						<tr><td>Numéro de série : </td> <td> <input type="text" name="NUM_SERIE" value="<?php if(isset($resultat)) echo $resultat['NUM_SERIE'] ; ?>"></td></tr>
 						<tr><td>Type matériel : </td> <td> <input type="text" name="CODE_TYPEM" value="<?php if(isset($resultat)) echo $resultat['CODE_TYPEM'] ; ?>"></td></tr>
 						<tr><td>Notice d'entretien : </td> <td> <input type="text" name="NOTICE_ENTRETIEN" value="<?php if(isset($resultat)) echo $resultat['NOTICE_ENTRETIEN'] ; ?>"></td></tr>
 						<tr><td>Prix par jour : </td> <td> <input type="text" name="PRIX_JOUR" value="<?php if(isset($resultat)) echo $resultat['PRIX_JOUR'] ; ?>"></td></tr>

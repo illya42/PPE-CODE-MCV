@@ -29,6 +29,7 @@
 				<form method="post" action="">
 
 					<table border= 7>
+						<tr><td>ID Technicien : </td> <td> <input type="text" name="IDT" value="<?php if(isset($resultat)) echo $resultat['IDT'] ; ?>"></td></tr>
 						<tr><td>Nom : </td> <td> <input type="text" name="NOMT" value="<?php if(isset($resultat)) echo $resultat['NOMT'] ; ?>"></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="PRENOMT" value="<?php if(isset($resultat)) echo $resultat['PRENOMT'] ; ?>"></td></tr>
 						<tr><td>Mail : </td> <td> <input type="text" name="MAILT" value="<?php if(isset($resultat)) echo $resultat['MAILT'] ; ?>"></td></tr>

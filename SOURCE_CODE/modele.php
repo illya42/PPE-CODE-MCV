@@ -137,7 +137,7 @@
         IDT =           '".$tab['IDT'].       "', 
         NOMT =          '".$tab['NOMT'].             "',
         PRENOMT =       '".$tab['PRENOMT'].       "',
-        MAILT =         '".$tab['MAILT'].         "',
+        MAILT =         '".$tab['MAILT'].         "'
         where IDT =     '".$tab['IDT']."'
         ;";
 
@@ -199,7 +199,7 @@
         DATE_DEBUT =    '".$tab['DATE_DEBUT']."',
         DATE_FIN =      '".$tab['DATE_FIN']."',
         SIGNATURE =     '".$tab['SIGNATURE']."',
-        ETAT =          '".$tab['ETAT']."',
+        ETAT =          '".$tab['ETAT']."'
         where NUMC =    '".$tab['NUMC']."'
         ;";
     
@@ -259,13 +259,12 @@
         $requete = 
         "update materiel
         set 
-        NUM_SERIE =                 '".$tab['NUM_SERIE'].       "',
+        NUM_SERIE =                 '".$tab['NUM_SERIE']."',
         CODE_TYPEM =                '".$tab['CODE_TYPEM']."',
         NOMM =                      '".$tab['NOMM']."',
         NOTICE_ENTRETIEN =          '".$tab['NOTICE_ENTRETIEN']."',
-        PRIX_JOUR =                 '".$tab['PRIX_JOUR']."',
-        where NUM_SERIE =           '".$tab['NUM_SERIE']."'
-        ;";
+        PRIX_JOUR =                 '".$tab['PRIX_JOUR']."'
+        where NUM_SERIE =           '".$tab['NUM_SERIE']."';";
     
         echo $requete;
 
