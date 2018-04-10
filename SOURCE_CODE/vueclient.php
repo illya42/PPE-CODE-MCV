@@ -45,6 +45,8 @@
 					<table border= 7 >
 						<tr><td>Nom : </td> <td> <input type="text" name="NOMC" value="<?php if(isset($resultat)) echo $resultat['NOMC'] ; ?>"></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="PRENOMC" value="<?php if(isset($resultat)) echo $resultat['PRENOMC'] ; ?>"></td></tr>
+						<tr><td>Catégorie de client : </td> <td> <input type="text" name="CODE_TYPEC" value="<?php if(isset($resultat)) echo $resultat['CODE_TYPEC'] ; ?>"></td></tr>
+						<tr><td>Mot de passe : </td> <td> <input type="text" name="MDPC" value="<?php if(isset($resultat)) echo $resultat['MDPC'] ; ?>"></td></tr>
 						<tr><td>Mail : </td> <td> <input type="text" name="MAIL" value="<?php if(isset($resultat)) echo $resultat['MAIL'] ; ?>"></td></tr>
 						<tr><td>Adresse : </td> <td> <input type="text" name="ADRESSEC" value="<?php if(isset($resultat)) echo $resultat['ADRESSEC'] ; ?>"></td></tr>
 						<tr><td>Code postal : </td> <td> <input type="int" name="CPC" value="<?php if(isset($resultat)) echo $resultat['CPC'] ; ?>"></td></tr>

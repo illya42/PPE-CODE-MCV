@@ -15,10 +15,9 @@
         $con = connexion();
         $requete ="select * from " .$table. ";";
 
-        echo $requete;
-        
         $resultat = mysqli_query($con,$requete);
 
+        echo $requete;
 
         deconnexion($con);
         return $resultat;
@@ -30,7 +29,8 @@
         $requete = "insert into client values
             (
             null,
-            '".$tab["IDC"]."',
+            '".$tab["CODE_TYPEC"]."',
+            '".$tab["MDPC"]."',
             '".$tab["NOMC"]."',
             '".$tab["PRENOMC"]."',
             '".$tab["MAIL"]."',
@@ -39,6 +39,8 @@
             '".$tab["TELC"]."',
             '".$tab["CPC"]."'
         );";
+
+        echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -48,7 +50,7 @@
         $con = connexion();
         $requete = "delete from client where IDC = ".$IDC.";";
 
-        echo $requete;
+        
         
         
         mysqli_query($con, $requete);
@@ -59,7 +61,7 @@
         $con = connexion();
         $requete = "select * from client where IDC = ".$IDC.";";
 
-        echo $requete;
+        
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
@@ -83,7 +85,7 @@
         where IDC =     '".$tab['IDC']."'
         ;";
 
-        echo $requete;
+        
     
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -111,7 +113,7 @@
         $con = connexion();
         $requete = "delete from technicien where IDT = ".$IDT.";";
         
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -121,7 +123,7 @@
         $con = connexion();
         $requete = "select * from technicien where IDT = ".$IDT.";";
 
-        echo $requete;
+        
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
@@ -141,7 +143,7 @@
         where IDT =     '".$tab['IDT']."'
         ;";
 
-        echo $requete;
+        
     
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -170,7 +172,7 @@
         $con = connexion();
         $requete = "delete from contrat where NUMC = ".$NUMC.";";
 
-        echo $requete;
+        
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -181,7 +183,7 @@
         $con = connexion();
         $requete = "select * from contrat where NUMC = ".$NUMC.";";
 
-        echo $requete;
+        
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
@@ -203,7 +205,7 @@
         where NUMC =    '".$tab['NUMC']."'
         ;";
     
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -234,7 +236,7 @@
         $con = connexion();
         $requete = "delete from materiel where NUM_SERIE = ".$NUM_SERIE.";";
         
-        echo $requete;
+        
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -245,7 +247,7 @@
         $con = connexion();
         $requete = "select * from materiel where NUM_SERIE = ".$NUM_SERIE.";";
 
-        echo $requete;
+        
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
@@ -266,7 +268,7 @@
         PRIX_JOUR =                 '".$tab['PRIX_JOUR']."'
         where NUM_SERIE =           '".$tab['NUM_SERIE']."';";
     
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -292,7 +294,7 @@
         $con = connexion();
         $requete = "delete from reservation where NUMR = ".$NUMR.";";
         
-        echo $requete;
+        
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -303,7 +305,7 @@
         $con = connexion();
         $requete = "select * from reservation where NUMR = ".$NUMR.";";
 
-        echo $requete;
+        
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
@@ -322,8 +324,6 @@
         DATER =             '".$tab['DATER']."'
         where NUMR =        '".$tab['NUMR']."'
         ;";
-
-        echo $requete;
     
         mysqli_query($con, $requete);
         deconnexion($con);

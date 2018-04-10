@@ -10,8 +10,29 @@
 	<title> Roilles : Location et maintenance </title>
 </head>
 <body>
-	<left>
+	<center>
 		<h1> Roilles SA </h1>
+	</center>
+	<left>
+		<h2> Connexion </h2>
+		<form method="post" action="">
+					<table border= 7>
+
+						<tr><td>Email : </td> <td> <input type="text" name="MAILT" value="<?php if(isset($resultat)) echo $resultat['MAILT'] ; ?>"></td></tr>
+						<tr><td>Mot de passe : </td> <td> <input type="text" name="MDPT" value="<?php if(isset($resultat)) echo $resultat['MDPT'] ; ?>"></td></tr>
+
+							<td> <input type="reset" name="Annuler" value="Annuler"></td>
+							<td> <input type="submit" name="Enregistrer" value="Connexion">
+							<a href="inscription.php?"> Inscription </a></td>
+						</tr>
+					</br>
+		</form>
+
+					</table>
+
+					<h1> Menu </h1>
+
+
 		<table border = 0>
 		<tr>
 			<tr><td>
@@ -48,9 +69,11 @@
 		}
 		switch ($page) 
 		{
-			case 1:
+			
 
 //						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Materiel !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+			
+			case 1:
 
 			if(isset($_GET['action']) && isset($_GET['NUM_SERIE']))
 				{
@@ -214,6 +237,24 @@
 				include("vue/vueclient.php");
 				break;
 
+//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! INSCRIPTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+
+			case 6:
+
+			if(isset($_GET['action']) && isset($_GET['client']))
+				{
+					$action = $_GET['action'];
+					$IDC = $_GET['IDC'];
+				}
+
+				if(isset($_POST["Enregistrer"]))
+				{
+					insertClientC($_POST);
+				}
+
+				$resultats = selectAllC ("client");
+				include("vue/vueinscription.php");
+				break;
 		}
 		?>
 
