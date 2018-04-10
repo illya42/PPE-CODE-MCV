@@ -31,13 +31,13 @@
             null,
             '".$tab["CODE_TYPEC"]."',
             '".$tab["MDPC"]."',
+            '".$tab["MAIL"]."',
             '".$tab["NOMC"]."',
             '".$tab["PRENOMC"]."',
-            '".$tab["MAIL"]."',
             '".$tab["ADRESSEC"]."',
-            '".$tab["DATENAISSC"]."',
+            '".$tab["CPC"]."',
             '".$tab["TELC"]."',
-            '".$tab["CPC"]."'
+            '".$tab["DATENAISSC"]."'
         );";
 
         echo $requete;

@@ -1,9 +1,13 @@
-<?php require 'inc/header.php'; ?>
+<?php require 'inc/header.php';
+
+include("controleur/controleur.php");
+
+?>
 
 </br>
 </br>
 </br>
-<h1>Formulaire d'isncription</h1>
+<h1>Formulaire d'inscription</h1>
 
 				<form method="post" action="">
 
@@ -23,7 +27,7 @@
 
 						<label for="">Mot de passe</label>
 
-						<input type="text" name="MDPC" value="<?php if(isset($resultat)) echo $resultat['MDPC'] ; ?>"></br>
+						<input type="password" name="MDPC" value="<?php if(isset($resultat)) echo $resultat['MDPC'] ; ?>"></br>
 
 
 						<label for="">Email</label>
@@ -54,10 +58,21 @@
 						<input type="hidden" name="IDC" value="<?php if(isset($resultat)) echo $resultat['IDC'] ; ?>">
 						</div>
 
-					
-					<button type="submit" class="btn btn-primary">Se Connecter</button>
+						
+							<input type="reset" name="Annuler" value="Annuler"></td>
+							<td> <input type="submit" name="Enregistrer" value="S'inscrire"> 
 				</form>
 			</br>
 				<a href="index.php?">Retour à l'accueil</a>
+			
+
+			<?php
+
+			if(isset($_POST["Enregistrer"]))
+				{
+					insertClientC($_POST);
+				}
+
+			?>
 
 <?php require 'inc/footer.php'; ?>
