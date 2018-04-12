@@ -1,7 +1,7 @@
 <left>
 	<h2> Liste des contracts enregistres </h2>
 	<br/>
-	<table border = 1>
+	<table border = 2>
 		<tr><td>Numero contract</td>
 			<td>Date debut</td>
 			<td>Date fin</td>
@@ -33,12 +33,13 @@
 			<h2>Ajout d'un Contrat</h2>
 				<form method="post" action="">
 
-					<table border= 7 >
+					<table border= 0 >
 						<tr><td>Date de début : </td> <td> <input type="date" name="DATE_DEBUT" value="<?php if(isset($resultat)) echo $resultat['DATE_DEBUT'] ; ?>"></td></tr>
 						<tr><td>Date de fin : </td> <td> <input type="date" name="DATE_FIN" value="<?php if(isset($resultat)) echo $resultat['DATE_FIN'] ; ?>"></td></tr>
 						<tr><td>Signature : </td> <td> <input type="text" name="SIGNATURE" value="<?php if(isset($resultat)) echo $resultat['SIGNATURE'] ; ?>"></td></tr>
 						<tr><td>État : </td> <td> <input type="text" name="ETAT" value="<?php if(isset($resultat)) echo $resultat['ETAT'] ; ?>"></td></tr>
-	
+						</br>
+						<tr>
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
 							<td> <input type="submit" name="Enregistrer" value="Enregistrer"> 
 							<input type="submit" name="Modifier" value="Modifier"></td>

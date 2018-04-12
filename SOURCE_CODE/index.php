@@ -24,6 +24,7 @@
 
 		<table border = 0>
 		<tr>
+
 			<tr><td>
 			<a href="index.php?page=1"> Materiel
 			</a></td></tr>
@@ -40,8 +41,12 @@
 			<a href="index.php?page=5"> Client
 			</a></td></tr>
 			<tr><td>
+			<a href="connection.php"> Mon Profil
+			</a></td></tr>
+			<tr><td>
 			<a href="index.php?"> Retour à l'accueil
 			</a></td></tr>
+			
 		</tr>
 
 		</table>
@@ -226,10 +231,30 @@
 				include("vue/vueclient.php");
 			break;
 
+//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PROFIL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
+
+
+			case 6:
+
+			
+				$resultats = selectWhereIdClientC ($IDC);
+
+				if(isset($_POST['Modifier']))
+				{
+					updateClientC($_POST) ;
+					$resultat = null;
+				}
+
+				if(isset($_POST["Enregistrer"]))
+				{
+					insertClientC($_POST);
+				}
+				
+				include("vue/vueprofil.php");
+			break;
+
 		}
 		?>
-
-	
 
 	</body>
 	</html>

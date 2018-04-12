@@ -6,7 +6,27 @@ if(!empty($_POST))
 {
 	$erreurs = array();
 
-	if(empty($_POST['NOMC']) || !preg_match('/[a-z]/', $_POST['NOMC']))
+	if(empty($_POST['NOMC']) && !preg_match('/[a-z]/', $_POST['NOMC']))
+	{
+		$erreurs['NOMC'] = "Remplissez le champs du Nom avec des caractères valides !";
+	}
+	if(empty($_POST['PRENOMC']) && !preg_match('/[a-z]/', $_POST['PRENOMC']))
+	{
+		$erreurs['PRENOMC'] = "Remplissez le champs du Prénom avec des caractères valides !";
+	}
+	if(empty($_POST['CODE_TYPEC']) && !preg_match('/[a-z]/', $_POST['CODE_TYPEC']))
+	{
+		$erreurs['CODE_TYPEC'] = "Remplissez le champs de la Catégorie client avec des caractères valides !";
+	}
+	if(empty($_POST['MDPC']) && !preg_match('/a{6,25}/', $_POST['MDPC']))
+	{
+		$erreurs['MDPC'] = "Remplissez le champs du Mot de ";
+	}
+	if(empty($_POST['NOMC']) && !preg_match('/[a-z]/', $_POST['NOMC']))
+	{
+		$erreurs['NOMC'] = "Remplissez le champs du Nom";
+	}
+	if(empty($_POST['NOMC']) && !preg_match('/[a-z]/', $_POST['NOMC']))
 	{
 		$erreurs['NOMC'] = "Remplissez le champs du Nom";
 	}
@@ -15,8 +35,6 @@ if(!empty($_POST))
 }
 
 ?>
-
-
 
 </br>
 </br>

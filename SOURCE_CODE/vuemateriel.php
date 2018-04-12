@@ -1,7 +1,7 @@
 <left>
 	<h2> Liste des materiels enregistres </h2>
 	<br/>
-	<table border = 1>
+	<table border = 2>
 		<tr> 	<td>Image</td>
 				<td>Numero de série</td>
 				<td>Type du matériel</td>
@@ -36,7 +36,7 @@
 			<h2>Ajout de Matériel</h2>
 				<form method="post" action="">
 
-					<table border= 7 >
+					<table border= 0 >
 
 						<tr><td>Article : </td> <td> <input type="text" name="NOMM" value="<?php if(isset($resultat)) echo $resultat['NOMM'] ; ?>"></td></tr>
 						<tr><td>Numéro de série : </td> <td> <input type="text" name="NUM_SERIE" value="<?php if(isset($resultat)) echo $resultat['NUM_SERIE'] ; ?>"></td></tr>
@@ -44,6 +44,8 @@
 						<tr><td>Notice d'entretien : </td> <td> <input type="text" name="NOTICE_ENTRETIEN" value="<?php if(isset($resultat)) echo $resultat['NOTICE_ENTRETIEN'] ; ?>"></td></tr>
 						<tr><td>Prix par jour : </td> <td> <input type="text" name="PRIX_JOUR" value="<?php if(isset($resultat)) echo $resultat['PRIX_JOUR'] ; ?>"></td></tr>
 						<tr><td>Poids : </td> <td> <input type="text" name="POIDS" value="<?php if(isset($resultat)) echo $resultat['POIDS'] ; ?>"></td></tr>
+						</br>
+						<tr>
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
 							<td> <input type="submit" name="Enregistrer" value="Enregistrer"> 
 							<input type="submit" name="Modifier" value="Modifier"></td>

@@ -1,7 +1,7 @@
 <?php
 //SERT A CONTROLER / FAIRE DES VERIFICATIONS
 
-    include("modele/modele.php");
+    include("C:/wamp64/www/PPE/GITHUB/modele/modele.php");
 
     function selectAllC($table)
     {

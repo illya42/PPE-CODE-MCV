@@ -39,7 +39,7 @@
             '".$tab["DATENAISSC"]."'
         );";
 
-        echo $requete;
+        
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -49,7 +49,7 @@
         $con = connexion();
         $requete = "delete from client where IDC = ".$IDC.";";
 
-        echo $requete;
+        
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -85,7 +85,7 @@
         where IDC =     '".$tab['IDC']."'
         ;";
 
-        echo $requete;
+        
     
         mysqli_query($con, $requete);
         deconnexion($con);

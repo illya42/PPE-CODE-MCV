@@ -1,7 +1,7 @@
 <left>
 	<h2> Liste des clients enregistres </h2>
 	<br/>
-	<table border = 1>
+	<table border = 2>
 		<tr>
 		<td>ID clients</td>
 		<td>Type clients</td>
@@ -41,7 +41,7 @@
 			<h2>Ajout d'un Client</h2>
 				<form method="post" action="">
 
-					<table border= 7 >
+					<table border= 0 >
 						<tr><td>Nom : </td> <td> <input type="text" name="NOMC" value="<?php if(isset($resultat)) echo $resultat['NOMC'] ; ?>"></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="PRENOMC" value="<?php if(isset($resultat)) echo $resultat['PRENOMC'] ; ?>"></td></tr>
 						<tr><td>Catégorie de client : </td> <td> <input type="text" name="CODE_TYPEC" value="<?php if(isset($resultat)) echo $resultat['CODE_TYPEC'] ; ?>"></td></tr>
@@ -51,6 +51,7 @@
 						<tr><td>Code postal : </td> <td> <input type="int" name="CPC" value="<?php if(isset($resultat)) echo $resultat['CPC'] ; ?>"></td></tr>
 						<tr><td>Téléphone : </td> <td> <input type="int" name="TELC" value="<?php if(isset($resultat)) echo $resultat['TELC'] ; ?>"></td></tr>
 						<tr><td>Date de naissance : </td> <td> <input type="date" name="DATENAISSC" value="<?php if(isset($resultat)) echo $resultat['DATENAISSC'] ; ?>"></td></tr>
+						</br>
 						<tr>
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
 							<td> <input type="submit" name="Enregistrer" value="Enregistrer"> 
