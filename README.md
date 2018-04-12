@@ -8,7 +8,8 @@
 			
 			* FINIS :
 			
-		MCV [!!! FINI !!!]
+		* MCV [!!! FINIS !!!]
+		* Connection / Inscription simple [!!! FINIS !!!]
 	
 			* FINIR :
 
