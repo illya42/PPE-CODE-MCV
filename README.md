@@ -14,10 +14,10 @@
 
 - [!!! REMPLIR LA BDD !!!]
 	
-*CLIENT
+* CLIENT
 ==> connection = faire en sorte que le client voit seulement ses infos
 
-*MATERIEL -[ !!! OK !!! ][ !!! METTRE DES IMAGES !!! ]
+* MATERIEL -[ !!! OK !!! ][ !!! METTRE DES IMAGES !!! ]
 
-*RESERVATION
+* RESERVATION
 ==> supprimer / éditer => dans DEBUG
