@@ -1,4 +1,6 @@
 <?php
+	require 'inc/header.php';
+
 	include("controleur/controleur.php")
 ?>
 
@@ -7,30 +9,17 @@
 <head>
 	<meta charset="utf-8" />
 		<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+	</br>
+	</br>
+	</br>
 	<title> Roilles : Location et maintenance </title>
 </head>
 <body>
 	<center>
 		<h1> Roilles SA </h1>
 	</center>
-	<left>
-		<h2> Connexion </h2>
-		<form method="post" action="">
-					<table border= 7>
-
-						<tr><td>Email : </td> <td> <input type="text" name="MAILT" value="<?php if(isset($resultat)) echo $resultat['MAILT'] ; ?>"></td></tr>
-						<tr><td>Mot de passe : </td> <td> <input type="text" name="MDPT" value="<?php if(isset($resultat)) echo $resultat['MDPT'] ; ?>"></td></tr>
-
-							<td> <input type="reset" name="Annuler" value="Annuler"></td>
-							<td> <input type="submit" name="Enregistrer" value="Connexion">
-							<a href="inscription.php?"> Inscription </a></td>
-						</tr>
-					</br>
-		</form>
-
-					</table>
-
-					<h1> Menu </h1>
+	
+		<h1> Menu </h1>
 
 
 		<table border = 0>
@@ -208,13 +197,13 @@
 
 			case 5:
 
-			if(isset($_GET['action']) && isset($_GET['client']))
+			if(isset($_GET['action']) && isset($_GET['IDC']))
 				{
 					$action = $_GET['action'];
 					$IDC = $_GET['IDC'];
 					if($action == "X")
 					{
-						deleteClientC ($IDC);
+						deleteClientC($IDC);
 					}
 					else if ($action == "E")
 					{
@@ -235,43 +224,14 @@
 
 				$resultats = selectAllC ("client");
 				include("vue/vueclient.php");
-				break;
+			break;
 
-//						!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! INSCRIPTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!						//
-
-			case 6:
-
-			if(isset($_GET['action']) && isset($_GET['client']))
-				{
-					$action = $_GET['action'];
-					$IDC = $_GET['IDC'];
-				}
-
-				if(isset($_POST["Enregistrer"]))
-				{
-					insertClientC($_POST);
-				}
-
-				$resultats = selectAllC ("client");
-				include("vue/vueinscription.php");
-				break;
 		}
 		?>
 
-	<center>
-		<p>
-		<img src='image/roilles.png' width='200' height='100' >
-		</br>
-		
-		Raison sociale :
-		Roilles SA
-		</br>
-		Capital :
-		Société anonyme au capital de 125 000€
-		</br>
-		Siège social : 15, place de la Liberté 18010 Bourges CEDEX
-		</p>
-	</center>
+	
 
 	</body>
 	</html>
+
+<?php require 'inc/footer.php'; ?>

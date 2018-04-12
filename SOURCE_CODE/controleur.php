@@ -26,14 +26,13 @@
 
     function deleteClientC ($IDC)
     {
-        //verification de l'idClient
+        
         deleteClientM ($IDC);
     }
 
     function selectWhereIdClientC ($IDC)
     {
-        //verification de l'idClient
-
+        
         $resultat = selectWhereIdClientM ($IDC);
         return $resultat;
     }

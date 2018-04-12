@@ -17,7 +17,6 @@
 
         $resultat = mysqli_query($con,$requete);
 
-        echo $requete;
 
         deconnexion($con);
         return $resultat;
@@ -50,8 +49,7 @@
         $con = connexion();
         $requete = "delete from client where IDC = ".$IDC.";";
 
-        
-        
+        echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -60,8 +58,6 @@
     {
         $con = connexion();
         $requete = "select * from client where IDC = ".$IDC.";";
-
-        
 
         $resultat = mysqli_query($con, $requete);
         $ligne = mysqli_fetch_assoc($resultat);
@@ -73,19 +69,23 @@
         $con = connexion();
         $requete = 
         "update client
-        set 
-        IDC =           '".$tab['IDC']."', 
-        NOMC =          '".$tab['NOMC']."',
-        PRENOMC =       '".$tab['PRENOMC']."',
-        MAIL =          '".$tab['MAIL']."',
+        set
+        IDC =           '".$tab['IDC'].       "',
+        CODE_TYPEC =    '".$tab["CODE_TYPEC"]."',
+        MDPC =          '".$tab["MDPC"]."',
+        MAIL =          '".$tab['MAIL'].         "',
+        NOMC =          '".$tab['NOMC'].             "',
+        PRENOMC =       '".$tab['PRENOMC'].       "',
+        
         ADRESSEC =      '".$tab['ADRESSEC']."',
-        DATENAISSC =    '".$tab['DATENAISSC']."',
+        CPC =           '".$tab['CPC']."',
         TELC =          '".$tab['TELC']."',
-        CPC =           '".$tab['CPC']."'
+        DATENAISSC =    '".$tab['DATENAISSC']."',
+        
         where IDC =     '".$tab['IDC']."'
         ;";
 
-        
+        echo $requete;
     
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -112,8 +112,6 @@
     {
         $con = connexion();
         $requete = "delete from technicien where IDT = ".$IDT.";";
-        
-        
 
         mysqli_query($con, $requete);
         deconnexion($con);

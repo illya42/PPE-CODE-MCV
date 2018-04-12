@@ -29,7 +29,6 @@
 			<td>".$unResultat['TELC']."</td>
 			<td>".$unResultat['DATENAISSC']."</td>
 			
-			
 			<td> 	<a href='index.php?page=5&action=X&IDC=".$unResultat['IDC']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
 							<a href='index.php?page=5&action=E&IDC=".$unResultat['IDC']."'>

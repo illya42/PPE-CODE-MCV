@@ -1,4 +1,4 @@
-
+	
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +13,7 @@
     <title>Roilles SA</title>
 
     <!-- Bootstrap core CSS -->
+    
     <link href="style.css" rel="stylesheet">
 
   </head>

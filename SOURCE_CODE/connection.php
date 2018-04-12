@@ -16,15 +16,15 @@ include("controleur/controleur.php");
 
 						<label for="">ID</label>
 
-						<input type="text" name="IDC" value="<?php if(isset($resultat)) echo $resultat['IDC'] ; ?>" required></br>
+						<input type="text" name="IDC" value="<?php if(isset($resultat)) echo $resultat['IDC'] ; ?>" class="form-control" required></br>
 						
 						<label for="">Email</label>
 
-						<input type="text" name="MAILC" value="<?php if(isset($resultat)) echo $resultat['MAILC'] ; ?>" required></br>
+						<input type="text" name="MAIL" value="<?php if(isset($resultat)) echo $resultat['MAIL'] ; ?>" class="form-control" required></br>
 
 						<label for="">Mot de passe</label>
 
-						<input type="password" name="MDPC" value="<?php if(isset($resultat)) echo $resultat['MDPC'] ; ?>" required>
+						<input type="password" name="MDPC" value="<?php if(isset($resultat)) echo $resultat['MDPC'] ; ?>" class="form-control" required>
 
 						<input type="hidden" name="IDC" value="<?php if(isset($resultat)) echo $resultat['IDC'] ; ?>">
 					</div>
@@ -39,7 +39,7 @@ include("controleur/controleur.php");
 
 				if(isset($_POST["Enregistrer"]))
 					{
-					header("Location: vue/vueclient.php");
+					header("Location: index.php?page=5.php");
 
 					$resultat = selectWhereIdClientC ($IDC);
 					
