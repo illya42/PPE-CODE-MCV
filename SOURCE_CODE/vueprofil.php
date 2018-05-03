@@ -50,6 +50,7 @@
 						<tr><td>Code postal : </td> <td> <input type="int" name="CPC" value="<?php if(isset($resultat)) echo $resultat['CPC'] ; ?>"></td></tr>
 						<tr><td>Téléphone : </td> <td> <input type="int" name="TELC" value="<?php if(isset($resultat)) echo $resultat['TELC'] ; ?>"></td></tr>
 						<tr><td>Date de naissance : </td> <td> <input type="date" name="DATENAISSC" value="<?php if(isset($resultat)) echo $resultat['DATENAISSC'] ; ?>"></td></tr>
+						
 						</br>
 						<tr>
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>

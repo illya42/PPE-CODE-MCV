@@ -1,4 +1,7 @@
 <?php
+
+
+
 //SERT A CONTROLER / FAIRE DES VERIFICATIONS
 
     include("C:/wamp64/www/PPE/GITHUB/modele/modele.php");
@@ -19,9 +22,9 @@
 
 //                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CLIENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                       //
 
-    function insertClientC ($IDC)
+    function insertClientC ($tab)
     {
-        insertClientM ($IDC);
+        insertClientM ($tab);
     }
 
     function deleteClientC ($IDC)

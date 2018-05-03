@@ -1,5 +1,6 @@
 <?php
 //INJECTE LES REQUETE SQL
+    
     function connexion()
     {
     $con = mysqli_connect("localhost","root","","locationppe");
@@ -39,7 +40,7 @@
             '".$tab["DATENAISSC"]."'
         );";
 
-        
+        echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);

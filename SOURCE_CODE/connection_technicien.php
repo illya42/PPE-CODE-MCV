@@ -2,13 +2,12 @@
 
 include("controleur/controleur.php");
 
-
 ?>
 
 </br>
 </br>
 </br>
-<h1>Formulaire de connection</h1>
+<h1>Espace techniciens</h1>
 
 				<form method="post" action="">
 
@@ -16,17 +15,17 @@ include("controleur/controleur.php");
 
 						<label for="">ID</label>
 
-						<input type="text" name="IDC" class="form-control" required></br>
+						<input type="text" name="IDT" class="form-control" required></br>
 						
 						<label for="">Email</label>
 
-						<input type="email" name="MAIL" class="form-control" required></br>
+						<input type="email" name="MAILT" class="form-control" required></br>
 
 						<label for="">Mot de passe</label>
 
-						<input type="password" name="MDPC" class="form-control" required>
+						<input type="password" name="MDPT" class="form-control" required>
 
-						<input type="hidden" name="IDC" value="<?php if(isset($resultat)) echo $resultat['IDC'] ; ?>">
+						<input type="hidden" name="IDT" value="<?php if(isset($resultat)) echo $resultat['IDC'] ; ?>">
 					</div>
 					
 					<input type="reset" name="Annuler" value="Annuler">
@@ -39,9 +38,9 @@ include("controleur/controleur.php");
 
 				if(isset($_POST["Enregistrer"]))
 					{
-					header("Location: index.php?page=5.php");
+					header("Location: index.php?page=6.php");
 
-					$resultat = selectWhereIdClientC ($IDC);
+					$resultat = selectWhereIdTechnicienC ($IDC);
 					
 					exit;
 					}

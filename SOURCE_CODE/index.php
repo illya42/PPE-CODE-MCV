@@ -21,29 +21,21 @@
 	
 		<h1> Menu </h1>
 
-
-		<table border = 0>
-		<tr>
-
-			<tr><td>
+			
 			<a href="index.php?page=1"> Materiel
-			</a></td></tr>
-			<tr><td>
+			</a><br/><br/>
 			<a href="index.php?page=2"> Technicien
-			</a></td></tr>
-			<tr><td>
+			</a><br/><br/>
 			<a href="index.php?page=3"> Contrat
-			</a></td></tr>
-			<tr><td>
+			</a><br/><br/>
 			<a href="index.php?page=4"> Réservation
-			</a></td></tr>
-			<tr><td>
+			</a><br/><br/>
 			<a href="index.php?page=5"> Client
-			</a></td></tr>
-			<tr><td>
+			</a><br/><br/>
 			<a href="connection.php"> Mon Profil
-			</a></td></tr>
-			<tr><td>
+			</a><br/><br/>
+			<a href="connection.php"> Mon Profil
+			</a><br/><br/>
 			<a href="index.php?"> Retour à l'accueil
 			</a></td></tr>
 			

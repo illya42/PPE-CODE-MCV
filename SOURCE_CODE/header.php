@@ -1,4 +1,5 @@
-	
+<?php include 'debug.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,9 +39,11 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 
-            <li class="active"><a href="inscription.php">S'inscrire</a></li>
+            <li><a href="inscription.php">S'inscrire</a></li>
 
             <li><a href="connection.php">Se connecter</a></li>
+
+            <li><a href="connection_technicien.php">Espace Pro</a></li>
 
           </ul>
         </div><!--/.nav-collapse -->
