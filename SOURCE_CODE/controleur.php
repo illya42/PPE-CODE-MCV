@@ -9,7 +9,7 @@
     function selectAllC($table)
     {
         //traitement des données
-        if($table == "materiel" || $table == "technicien" || $table == "contrat" || $table == "reservation" || $table == "client")
+        if($table == "contrat" || $table == "reservation" )
         {
             $resultat = selectAllM($table);
             return $resultat;
@@ -60,6 +60,12 @@
 #       TABLE : TECHNICIEN
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
+
+    function selectAllTechnicienC ()
+    {
+        $resultat = selectAllTechnicienM ();
+        return $resultat;
+    }
 
     function insertTechnicienC ($tab)
     {
@@ -115,6 +121,12 @@
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
+    function selectAllMaterielC ()
+    {
+        $resultat = selectAllMaterielM ();
+        return $resultat;
+    }
+
     function insertMaterielC ($tab)
     {
         insertMaterielM ($tab);
@@ -162,4 +174,38 @@
     {
         updateReservationM ($tab);
     }
+
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : INTERVENTION
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+
+    function selectAllInterventionC ()
+    {
+        $resultat = selectAllInterventionM ();
+        return $resultat;
+    }
+
+    function insertInterventionC ($tab)
+    {
+        insertInterventionM ($tab);
+    }
+
+    function deleteInterventionC ($codeI)
+    {
+        deleteInterventionM ($codeI);
+    }
+
+    function selectWhereIdInterventionC ($codeI)
+    {
+        $resultat = selectWhereIdInterventionM ($codeI);
+        return $resultat;
+    }
+
+    function updateInterventionC ($tab)
+    {
+        updateInterventionM ($tab);
+    }
+
 ?>

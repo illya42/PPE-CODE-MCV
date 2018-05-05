@@ -1,13 +1,13 @@
 <left>
 	<h2> Liste des contracts enregistres </h2>
 	<br/>
-	<table border = 2>
-		<tr><td>Numero contract</td>
-			<td>Date debut</td>
-			<td>Date fin</td>
-			<td>Signature</td>
-			<td>Etat</td>
-			<td>Actions</td>
+	<table border = 0>
+		<tr><th>Numero contract</th>
+			<th>Date debut</th>
+			<th>Date fin</th>
+			<th>Signature</th>
+			<th>Etat</th>
+			<th>Actions</th>
 		</tr>
 		<?php
 		foreach ($resultats as $unResultat) 

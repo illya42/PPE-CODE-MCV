@@ -35,6 +35,8 @@
         $con = connexion();
         $requete ="select codeC, c.codeT_C, mdpc, mail, nom, prenom, adresse, cp, tel, datenaiss, libelle from client c, type_client t where c.codeT_C = t.codeT_C ;";
 
+
+
         $resultat = mysqli_query($con,$requete);
 
 
@@ -68,6 +70,8 @@
     {
         $con = connexion();
         $requete = "delete from client where codeC = ".$codeC.";";
+
+        echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -102,7 +106,7 @@
         where codeC =     '".$tab['codeC']."'
         ;";
 
-        
+        echo $requete;
     
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -113,6 +117,21 @@
 #       TABLE : TECHNICIEN
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
+
+    function selectAllTechnicienM ()
+    {
+        //on se connecte sur la base de données 
+        $con = connexion();
+        $requete ="select codeT, t.codeT_T, mdp, nom, prenom, mail, libelle from technicien t, type_technicien y where t.codeT_T = y.codeT_T;";
+
+
+
+        $resultat = mysqli_query($con,$requete);
+
+
+        deconnexion($con);
+        return $resultat;
+    }
 
     function insertTechnicienM ($tab)
     {
@@ -126,6 +145,8 @@
             '".$tab["prenom"]."',
             '".$tab["mail"]."'
         );";
+
+        echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -134,6 +155,8 @@
     {
         $con = connexion();
         $requete = "delete from technicien where codeT = ".$codeT.";";
+
+        echo $requete;
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -166,7 +189,7 @@
         where codeT =     '".$tab['codeT']."'
         ;";
 
-        
+        echo $requete;
     
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -189,6 +212,8 @@
             '".$tab["signature"]."',
             '".$tab["etat"]."'
             );";
+
+            echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -199,7 +224,7 @@
         $con = connexion();
         $requete = "delete from contrat where code_contrat = ".$code_contrat.";";
 
-        
+        echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -233,7 +258,7 @@
         where code_contrat =    '".$tab['code_contrat']."'
         ;";
     
-        
+        echo $requete;
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -244,6 +269,21 @@
 #       TABLE : MATERIEL
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
+
+    function selectAllMaterielM ()
+    {
+        //on se connecte sur la base de données 
+        $con = connexion();
+        $requete ="select codeM, m.codeT_M, nom, notice, prix, poids, designation from materiel m, type_materiel t where m.codeT_M = t.codeT_M;";
+
+
+
+        $resultat = mysqli_query($con,$requete);
+
+
+        deconnexion($con);
+        return $resultat;
+    }
 
     function insertMaterielM ($tab)
     {
@@ -270,7 +310,7 @@
         $con = connexion();
         $requete = "delete from materiel where codeM = ".$codeM.";";
         
-        
+        echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -304,7 +344,7 @@
 
         where codeM =            '".$tab['codeM']."';";
     
-        
+        echo $requete;
 
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -328,6 +368,8 @@
             '".$tab["date_retrait"]."',
             '".$tab["date_depot"]."'
        		);";
+
+            echo $requete;
         
         mysqli_query($con, $requete);
         deconnexion($con);
@@ -371,7 +413,89 @@
 
         where codeR =        '".$tab['codeR']."'
         ;";
+
+        echo $requete;
     
+        mysqli_query($con, $requete);
+        deconnexion($con);
+    }
+
+
+# -----------------------------------------------------------------------------    
+# -----------------------------------------------------------------------------
+#       TABLE : INTERVENTIONS
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+
+    function selectAllInterventionM ()
+    {
+        //on se connecte sur la base de données 
+        $con = connexion();
+        $requete ="select codeI, i.codeT_I, duree, commentaire, etat, libelle from intervention i, type_intervention t;";
+
+        $resultat = mysqli_query($con,$requete);
+
+        deconnexion($con);
+        return $resultat;
+    }
+
+    function insertInterventionM ($tab)
+    {
+        $con = connexion();
+        $requete = "insert into intervention values
+            (
+            null,
+            '".$tab["codeT_I"]."',
+            '".$tab["duree"]."',
+            '".$tab["commentaire"]."',
+            '".$tab["etat"]."'
+
+            );";
+
+        echo $requete;
+        
+        mysqli_query($con, $requete);
+        deconnexion($con);
+    }
+
+     function deleteInterventionM ($codeI)
+    {
+        $con = connexion();
+        $requete = "delete from intervention where codeI = ".$codeI.";";
+        
+        echo $requete;
+        
+        mysqli_query($con, $requete);
+        deconnexion($con);
+    }
+
+    function selectWhereIdInterventionM ($codeI)
+    {
+        $con = connexion();
+        $requete = "select * from intervention where codeI = ".$codeI.";";
+
+        $resultat = mysqli_query($con, $requete);
+        $ligne = mysqli_fetch_assoc($resultat);
+        deconnexion($con);
+        return $ligne;
+    }
+
+     function updateInterventionM ($tab)
+    {
+        $con = connexion();
+        $requete = 
+        "update materiel
+        set 
+
+        codeT_I =                '".$tab['codeT_I']."',
+        duree =                  '".$tab['duree']."',
+        commentaire =            '".$tab['commentaire']."',
+        etat =                   '".$tab['etat']."'
+
+        where codeI =            '".$tab['codeI']."';";
+    
+        echo $requete;
+
         mysqli_query($con, $requete);
         deconnexion($con);
     }

@@ -1,14 +1,14 @@
 <left>
 	<h2> Liste des reservations enregistres </h2>
 	<br/>
-	<table border = 2>
-		<tr><td>N° Réservation</td>
-			<td>Etat</td>
-			<td>Début de la réservation</td>
-			<td>Fin de la réservation</td>
-			<td>Date de retrait</td>
-			<td>Date de dépôt</td>
-			<td>Actions</td>
+	<table border = 0>
+		<tr><th>N° Réservation</th>
+			<th>Etat</th>
+			<th>Début de la réservation</th>
+			<th>Fin de la réservation</th>
+			<th>Date de retrait</th>
+			<th>Date de dépôt</th>
+			<th>Actions</th>
 		</tr>
 		<?php
 		foreach ($resultats as $unResultat) 

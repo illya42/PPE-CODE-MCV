@@ -1,19 +1,19 @@
 <left>
 	<h2> Liste des clients enregistres </h2>
 	<br/>
-	<table border = 2>
+	<table border = 0>
 		<tr>
-		<td>ID clients</td>
-		<td>Code Type clients</td>
-		<td>Type clients</td>
-		<td>Nom</td>
-      	<td>Prenom</td>
-     	<td>Mail</td>
-      	<td>Adresse</td>
-      	<td>Code postal</td>
-      	<td>Telephone</td>
-     	<td>Date de naissance</td>
-     	<td>Actions</td>
+		<th>ID clients</th>
+		<th>Code Type clients</th>
+		<th>Type clients</th>
+		<th>Nom</th>
+      	<th>Prenom</th>
+     	<th>Mail</th>
+      	<th>Adresse</th>
+      	<th>Code postal</th>
+      	<th>Telephone</th>
+     	<th>Date de naissance</th>
+     	<th>Actions</th>
      </tr>
 		
       	<?php

@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-		<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="style" rel="stylesheet" type="text/css" media="all" />
 	</br>
 	</br>
 	</br>
@@ -90,7 +90,7 @@
 					insertMaterielC($_POST);
 				}
 
-				$resultats = selectAllC ("materiel");
+				$resultats = selectAllMaterielC ();
 				include("vue/vuemateriel.php");
 			break;
 
@@ -127,7 +127,7 @@
 					insertTechnicienC($_POST);
 				}
 
-				$resultats = selectAllC ("technicien");
+				$resultats = selectAllTechnicienC ();
 				include("vue/vuetechnicien.php");
 			break;
 
@@ -252,21 +252,33 @@
 
 			case 6:
 
-			
-				$resultats = selectWhereIdClientC ($codeC);
+			if(isset($_GET['action']) && isset($_GET['codeI']))
+				{
+					$action = $_GET['action'];
+					$codeI = $_GET['codeI'];
+					if($action == "X")
+					{
+						deleteClientC($codeI);
+					}
+					else if ($action == "E")
+					{
+						$resultat = selectWhereIdInterventionC ($codeI);
+					}
+				}
 
 				if(isset($_POST['Modifier']))
 				{
-					updateClientC($_POST) ;
+					updateInterventionC($_POST) ;
 					$resultat = null;
 				}
 
 				if(isset($_POST["Enregistrer"]))
 				{
-					insertClientC($_POST);
+					insertInterventionC($_POST);
 				}
-				
-				include("vue/vueprofil.php");
+
+				$resultats = selectAllInterventionC ();
+				include("vue/vueintervention.php");
 			break;
 
 		}

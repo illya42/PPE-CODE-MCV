@@ -11,7 +11,7 @@ create database location;
 create table type_intervention
   (
     codeT_I int(5) not null auto_increment,
-    libelle varchar(100),
+    libelle enum("Maintenance","Installation","Réparation"),
     primary key(codeT_I)
   );
 
@@ -67,7 +67,7 @@ create table  client
 create table type_materiel
  (
    codeT_M int(5) not null auto_increment,
-   designation varchar(50),
+   designation enum("Bricolage","Construction","Jardinage"),
    primary key(codeT_M) 
  );
 
@@ -94,7 +94,7 @@ create table materiel
 create table type_technicien
  (
    codeT_T int(5) not null auto_increment,
-   libelle enum("Maintenance","Installation","Réparation"),
+   libelle enum("Mainteneur","Installateur","Réparateur"),
    primary key(codeT_T) 
  );
 

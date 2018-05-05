@@ -1,14 +1,14 @@
 <left>
 	<h2> Liste des techniciens </h2>
 	<br/>
-	<table border = 2>
-		<tr><td>ID technicien</td>
-			<td>Code du type de technicien</td>
-			<td>Type du technicien</td>
-			<td>Nom</td>
-			<td>Prenom</td>
-			<td>Mail</td>
-			<td>Actions</td>
+	<table border = 0>
+		<tr><th>ID technicien</th>
+			<th>Code du type de technicien</th>
+			<th>Type du technicien</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Mail</th>
+			<th>Actions</th>
 		</tr>
 		<?php
 		foreach ($resultats as $unResultat) {
@@ -42,7 +42,7 @@
 
 						<tr><td>Nom : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>"></td></tr>
 						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" value="<?php if(isset($resultat)) echo $resultat['prenom'] ; ?>"></td></tr>
-						<tr><td>Mail : </td> <td> <input type="text" name="mail" value="<?php if(isset($resultat)) echo $resultat['mail'] ; ?>"></td></tr>
+						<tr><td>Mail : </td> <td> <input type="email" name="mail" value="<?php if(isset($resultat)) echo $resultat['mail'] ; ?>"></td></tr>
 						<tr><td>Mot de passe : </td> <td> <input type="password" name="mdp" value="<?php if(isset($resultat)) echo $resultat['mdp'] ; ?>"></td></tr>
 						</br>
 						<tr>

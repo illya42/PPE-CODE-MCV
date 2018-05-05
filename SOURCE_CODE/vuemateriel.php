@@ -1,14 +1,15 @@
 <left>
 	<h2> Liste des materiels enregistres </h2>
 	<br/>
-	<table border = 2>
-		<tr> 	<td>Numero de série</td>
-				<td>Type du matériel</td>
-				<td>Article</td>
-				<td>Notice d'entretien</td>
-				<td>Prix par jour</td>
-				<td>Poids</td>
-				<td>Actions</td>
+	<table border = 0>
+		<tr> 	<th>Numero de série</th>
+				<th>Type du matériel</th>
+				<th>Désignation</th>
+				<th>Article</th>
+				<th>Notice d'entretien</th>
+				<th>Prix par jour</th>
+				<th>Poids</th>
+				<th>Actions</th>
 		</tr>
 		<?php
 		foreach ($resultats as $unResultat) {
@@ -16,6 +17,7 @@
 			
 			<td>".$unResultat['codeM']."</td>
 			<td>".$unResultat['codeT_M']."</td>
+			<td>".$unResultat['designation']."</td>
 			<td>".$unResultat['nom']."</td>
 			<td>".$unResultat['notice']."</td>
 			<td>".$unResultat['prix']."</td>
@@ -39,7 +41,14 @@
 
 						<tr><td>Article : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>"></td></tr>
 						<tr><td>Numéro de série : </td> <td> <input type="text" name="codeM" value="<?php if(isset($resultat)) echo $resultat['codeM'] ; ?>"></td></tr>
-						<tr><td>Type matériel : </td> <td> <input type="text" name="codeT_M" value="<?php if(isset($resultat)) echo $resultat['codeT_M'] ; ?>"></td></tr>
+						
+						<tr><td>Type de matériel : </td> <td> 
+								<select name="codeT_M" value="<?php if(isset($resultat)) echo $resultat['codeT_M'] ; ?>">
+						<option value="1"> Bricolage </option>
+						<option value="2"> Construction </option>
+						<option value="3"> Jardinage </option>
+						</select>
+
 						<tr><td>Notice d'entretien : </td> <td> <input type="text" name="notice" value="<?php if(isset($resultat)) echo $resultat['notice'] ; ?>"></td></tr>
 						<tr><td>Prix par jour : </td> <td> <input type="text" name="prix" value="<?php if(isset($resultat)) echo $resultat['prix'] ; ?>"></td></tr>
 						<tr><td>Poids : </td> <td> <input type="text" name="poids" value="<?php if(isset($resultat)) echo $resultat['poids'] ; ?>"></td></tr>
