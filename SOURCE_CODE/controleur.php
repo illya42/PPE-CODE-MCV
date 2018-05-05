@@ -4,7 +4,7 @@
 
 //SERT A CONTROLER / FAIRE DES VERIFICATIONS
 
-    include("C:/wamp64/www/PPE/GITHUB/modele/modele.php");
+    include("modele/modele.php");
 
     function selectAllC($table)
     {
@@ -20,23 +20,33 @@
         }
     }
 
-//                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CLIENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                       //
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : CLIENT
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+
+    function selectAllClientC ()
+    {
+        $resultat = selectAllClientM ();
+        return $resultat;
+    }
 
     function insertClientC ($tab)
     {
         insertClientM ($tab);
     }
 
-    function deleteClientC ($IDC)
+    function deleteClientC ($codeC)
     {
         
-        deleteClientM ($IDC);
+        deleteClientM ($codeC);
     }
 
-    function selectWhereIdClientC ($IDC)
+    function selectWhereIdClientC ($codeC)
     {
         
-        $resultat = selectWhereIdClientM ($IDC);
+        $resultat = selectWhereIdClientM ($codeC);
         return $resultat;
     }
 
@@ -45,21 +55,25 @@
         updateClientM ($tab);
     }
 
-//                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! TECHNICIEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     //
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : TECHNICIEN
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
     function insertTechnicienC ($tab)
     {
         insertTechnicienM ($tab);
     }
 
-    function deleteTechnicienC ($IDT)
+    function deleteTechnicienC ($codeT)
     {
-        deleteProduitModel ($IDT);
+        deleteProduitModel ($codeT);
     }
 
-    function selectWhereIdTechnicienC ($IDT)
+    function selectWhereIdTechnicienC ($codeT)
     {
-        $resultat = selectWhereIdTechnicienM ($IDT);
+        $resultat = selectWhereIdTechnicienM ($codeT);
         return $resultat;
     }
 
@@ -68,21 +82,25 @@
         updateTechnicienM ($tab);
     }
 
-//                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CONTRAT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     //
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : CONTRAT
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
     function insertContratC ($tab)
     {
         insertContratM ($tab);
     }
 
-    function deleteContratC ($NUMC)
+    function deleteContratC ($code_contrat)
     {
-        deleteMessageModel ($NUMC);
+        deleteMessageModel ($code_contrat);
     }
 
-    function selectWhereIdContratC ($NUMC)
+    function selectWhereIdContratC ($code_contrat)
     {
-        $resultat = selectWhereIdContratM ($NUMC);
+        $resultat = selectWhereIdContratM ($code_contrat);
         return $resultat;
     }
 
@@ -91,21 +109,25 @@
         updateContratM ($tab);
     }
 
-    //                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! MATERIEL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     //
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : MATERIEL
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
     function insertMaterielC ($tab)
     {
         insertMaterielM ($tab);
     }
 
-    function deleteMaterielC ($NUM_SERIE)
+    function deleteMaterielC ($codeM)
     {
-        deleteMaterielM ($NUM_SERIE);
+        deleteMaterielM ($codeM);
     }
 
-    function selectWhereIdMaterielC ($NUM_SERIE)
+    function selectWhereIdMaterielC ($codeM)
     {
-        $resultat = selectWhereIdMaterielM ($NUM_SERIE);
+        $resultat = selectWhereIdMaterielM ($codeM);
         return $resultat;
     }
 
@@ -114,21 +136,25 @@
         updateMaterielM ($tab);
     }
 
-    //                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! RESERVATION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     //
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+#       TABLE : RESERVATION
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
     function insertReservationC ($tab)
     {
         insertReservationM ($tab);
     }
 
-    function deleteReservationC ($NUMR)
+    function deleteReservationC ($codeR)
     {
-        deleteReservationM ($NUMR);
+        deleteReservationM ($codeR);
     }
 
-    function selectWhereIdReservationC ($NUMR)
+    function selectWhereIdReservationC ($codeR)
     {
-        $resultat = selectWhereIdReservationM ($NUMR);
+        $resultat = selectWhereIdReservationM ($codeR);
         return $resultat;
     }
 

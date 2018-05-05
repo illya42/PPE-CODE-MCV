@@ -3,6 +3,8 @@
 	<br/>
 	<table border = 2>
 		<tr><td>ID technicien</td>
+			<td>Code du type de technicien</td>
+			<td>Type du technicien</td>
 			<td>Nom</td>
 			<td>Prenom</td>
 			<td>Mail</td>
@@ -11,14 +13,16 @@
 		<?php
 		foreach ($resultats as $unResultat) {
 			echo "<tr>
-			<td>".$unResultat['IDT']."</td>
-			<td>".$unResultat['NOMT']."</td>
-			<td>".$unResultat['PRENOMT']."</td>
-			<td>".$unResultat['MAILT']."</td>
+			<td>".$unResultat['codeT']."</td>
+			<td>".$unResultat['codeT_T']."</td>
+			<td>".$unResultat['libelle']."</td>
+			<td>".$unResultat['nom']."</td>
+			<td>".$unResultat['prenom']."</td>
+			<td>".$unResultat['mail']."</td>
 			
-			<td> 	<a href='index.php?page=2&action=X&IDT=".$unResultat['IDT']."'>
+			<td> 	<a href='index.php?page=2&action=X&codeT=".$unResultat['codeT']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=2&action=E&IDT=".$unResultat['IDT']."'>
+							<a href='index.php?page=2&action=E&codeT=".$unResultat['codeT']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 		}
@@ -29,10 +33,17 @@
 				<form method="post" action="">
 
 					<table border= 0>
-						<tr><td>ID Technicien : </td> <td> <input type="text" name="IDT" value="<?php if(isset($resultat)) echo $resultat['IDT'] ; ?>"></td></tr>
-						<tr><td>Nom : </td> <td> <input type="text" name="NOMT" value="<?php if(isset($resultat)) echo $resultat['NOMT'] ; ?>"></td></tr>
-						<tr><td>Prénom : </td> <td> <input type="text" name="PRENOMT" value="<?php if(isset($resultat)) echo $resultat['PRENOMT'] ; ?>"></td></tr>
-						<tr><td>Mail : </td> <td> <input type="text" name="MAILT" value="<?php if(isset($resultat)) echo $resultat['MAILT'] ; ?>"></td></tr>
+						<tr><td>Type de technicien : </td> <td> 
+								<select name="codeT_T" value="<?php if(isset($resultat)) echo $resultat['codeT_T'] ; ?>">
+						<option value="1"> Maintenance </option>
+						<option value="2"> Installation </option>
+						<option value="3"> Réparation </option>
+						</select>
+
+						<tr><td>Nom : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>"></td></tr>
+						<tr><td>Prénom : </td> <td> <input type="text" name="prenom" value="<?php if(isset($resultat)) echo $resultat['prenom'] ; ?>"></td></tr>
+						<tr><td>Mail : </td> <td> <input type="text" name="mail" value="<?php if(isset($resultat)) echo $resultat['mail'] ; ?>"></td></tr>
+						<tr><td>Mot de passe : </td> <td> <input type="password" name="mdp" value="<?php if(isset($resultat)) echo $resultat['mdp'] ; ?>"></td></tr>
 						</br>
 						<tr>
 						
@@ -42,6 +53,6 @@
 						</tr>
 
 					</table>
-					<input type="hidden" name="IDT" value="<?php if(isset($resultat)) echo $resultat['IDT'] ; ?>">
+					<input type="hidden" name="codeT" value="<?php if(isset($resultat)) echo $resultat['codeT'] ; ?>">
 				</form>
 </left>

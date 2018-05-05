@@ -2,8 +2,7 @@
 	<h2> Liste des materiels enregistres </h2>
 	<br/>
 	<table border = 2>
-		<tr> 	<td>Image</td>
-				<td>Numero de série</td>
+		<tr> 	<td>Numero de série</td>
 				<td>Type du matériel</td>
 				<td>Article</td>
 				<td>Notice d'entretien</td>
@@ -14,18 +13,18 @@
 		<?php
 		foreach ($resultats as $unResultat) {
 			echo "<tr>
-			<td><a href='index.php?page=1&NUM_SERIE=".$unResultat['NUM_SERIE']."'><img src='image/marteaupiqueur.jpg' width = '200' height = '120'> </a> </td>
-			<td>".$unResultat['NUM_SERIE']."</td>
-			<td>".$unResultat['CODE_TYPEM']."</td>
-			<td>".$unResultat['NOMM']."</td>
-			<td>".$unResultat['NOTICE_ENTRETIEN']."</td>
-			<td>".$unResultat['PRIX_JOUR']."</td>
-			<td>".$unResultat['POIDS']."</td>
+			
+			<td>".$unResultat['codeM']."</td>
+			<td>".$unResultat['codeT_M']."</td>
+			<td>".$unResultat['nom']."</td>
+			<td>".$unResultat['notice']."</td>
+			<td>".$unResultat['prix']."</td>
+			<td>".$unResultat['poids']."</td>
 			<td>
 			
-			<a href='index.php?page=1&action=X&NUM_SERIE=".$unResultat['NUM_SERIE']."'>
+			<a href='index.php?page=1&action=X&codeM=".$unResultat['codeM']."'>
 							<img src='image/supprimer.png' width='80' height='80' > </a>
-							<a href='index.php?page=1&action=E&NUM_SERIE=".$unResultat['NUM_SERIE']."'>
+							<a href='index.php?page=1&action=E&codeM=".$unResultat['codeM']."'>
 							<img src='image/editer.jpg' width='80' height='80' > </a>
 				</tr>";
 
@@ -38,12 +37,12 @@
 
 					<table border= 0 >
 
-						<tr><td>Article : </td> <td> <input type="text" name="NOMM" value="<?php if(isset($resultat)) echo $resultat['NOMM'] ; ?>"></td></tr>
-						<tr><td>Numéro de série : </td> <td> <input type="text" name="NUM_SERIE" value="<?php if(isset($resultat)) echo $resultat['NUM_SERIE'] ; ?>"></td></tr>
-						<tr><td>Type matériel : </td> <td> <input type="text" name="CODE_TYPEM" value="<?php if(isset($resultat)) echo $resultat['CODE_TYPEM'] ; ?>"></td></tr>
-						<tr><td>Notice d'entretien : </td> <td> <input type="text" name="NOTICE_ENTRETIEN" value="<?php if(isset($resultat)) echo $resultat['NOTICE_ENTRETIEN'] ; ?>"></td></tr>
-						<tr><td>Prix par jour : </td> <td> <input type="text" name="PRIX_JOUR" value="<?php if(isset($resultat)) echo $resultat['PRIX_JOUR'] ; ?>"></td></tr>
-						<tr><td>Poids : </td> <td> <input type="text" name="POIDS" value="<?php if(isset($resultat)) echo $resultat['POIDS'] ; ?>"></td></tr>
+						<tr><td>Article : </td> <td> <input type="text" name="nom" value="<?php if(isset($resultat)) echo $resultat['nom'] ; ?>"></td></tr>
+						<tr><td>Numéro de série : </td> <td> <input type="text" name="codeM" value="<?php if(isset($resultat)) echo $resultat['codeM'] ; ?>"></td></tr>
+						<tr><td>Type matériel : </td> <td> <input type="text" name="codeT_M" value="<?php if(isset($resultat)) echo $resultat['codeT_M'] ; ?>"></td></tr>
+						<tr><td>Notice d'entretien : </td> <td> <input type="text" name="notice" value="<?php if(isset($resultat)) echo $resultat['notice'] ; ?>"></td></tr>
+						<tr><td>Prix par jour : </td> <td> <input type="text" name="prix" value="<?php if(isset($resultat)) echo $resultat['prix'] ; ?>"></td></tr>
+						<tr><td>Poids : </td> <td> <input type="text" name="poids" value="<?php if(isset($resultat)) echo $resultat['poids'] ; ?>"></td></tr>
 						</br>
 						<tr>
 							<td> <input type="reset" name="Annuler" value="Annuler"></td>
@@ -52,6 +51,6 @@
 						</tr>
 
 					</table>
-					<input type="hidden" name="NUM_SERIE" value="<?php if(isset($resultat)) echo $resultat['NUM_SERIE'] ; ?>">
+					<input type="hidden" name="codeM" value="<?php if(isset($resultat)) echo $resultat['codeM'] ; ?>">
 				</form>
 </left>
