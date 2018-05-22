@@ -11,7 +11,7 @@ create database location;
 create table type_intervention
   (
     codeT_I int(5) not null auto_increment,
-    libelle enum("Maintenance","Installation","Réparation"),
+    libelle varchar(100),
     primary key(codeT_I)
   );
 
@@ -67,7 +67,7 @@ create table  client
 create table type_materiel
  (
    codeT_M int(5) not null auto_increment,
-   designation enum("Bricolage","Construction","Jardinage"),
+   designation varchar(50),
    primary key(codeT_M) 
  );
 
@@ -93,8 +93,8 @@ create table materiel
 
 create table type_technicien
  (
-   codeT_T int(5) not null auto_increment,
-   libelle enum("Mainteneur","Installateur","Réparateur"),
+   codeT_T int(5) not null,
+   libelle varchar(50),
    primary key(codeT_T) 
  );
 
@@ -107,8 +107,8 @@ create table technicien
    codeT int(5) not null auto_increment,
    codeT_T int(5) not null,
    mdp varchar(50),
-   nom varchar(25),
    prenom varchar(25),
+   nom varchar(25),
    mail varchar(50),
    primary key(codeT),
    foreign key(codeT_T) references type_technicien(codeT_T)
@@ -145,12 +145,12 @@ create table reservation
 
 create table contrat
  (
-   code_contrat int(5) not null auto_increment,
+   codeC int(5) not null auto_increment,
    codeR int(5) not null,
    codeL int(5) not null,
    signature varchar(50),
    etat varchar(50),
-   primary key(code_contrat),
+   primary key(codeC),
    foreign key(codeR) references reservation(codeR),
    foreign key(codeL) references location(codeL)
  );
@@ -182,39 +182,51 @@ create table intervenir
    foreign key(codeL) references location(codeL)
  );
 
-/*
-insert into type_client values
+insert into reservation(etat,dateD,dateF,date_retrait,date_depot) Values
+("OK","2015-01-01","2015-11-11","2015-02-01","2015-11-11"),
+("OK","2016-12-26","2017-05-21","2016-12-26","2017-05-21");
+
+
+
+insert into type_client(codeT_C,libelle) Values
 (1,"Particulier"),
 (2,"Professionnelle");
 
-insert into client values
-,2,"motdepasse1","jean655@hotmail.com","DUPONT","Jean-Mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
-,2,"motdepasse2","massala111@hotmail.com","OUALA","Jean-Massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
-,2,"motdepasse3","jm_soprano@hotmail.com","SOPRANO","Michel","1 place de Renault","75018","0105748212","1991-08-01");
+insert into client(codeT_C,mdpc,mail,nom,prenom,adresse,cp,tel,datenaiss) Values
 
-insert into type_materiel values
+(2,"motdepasse1","jean655@hotmail.com","DUPONT","Jean-Mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
+(2,"motdepasse2","massala111@hotmail.com","OUALA","Jean-Massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
+(2,"motdepasse3","jm_soprano@hotmail.com","SOPRANO","Michel","1 place de Renault","75018","0105748212","1991-08-01");
+
+insert into type_materiel(codeT_M,designation) Values
 (1, "Bricolage"),
 (2, "Construction"),
 (3, "Jardinage");
 
-insert into materiel values
+insert into materiel(codeM,codeT_M,nom,notice,prix,poids) Values
 (1, 1, "Marteau-piqueur", "Ne pas manger cru", "110,99", "18");
+(2, 2, "Mixeur", "Bien mixer", "249", "19");
 
-insert into technicien values
-(1, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
+insert into type_technicien(codeT_T,libelle) Values
+(1,"technicien de terrain"),
+(2,"technicien de..");
+
+insert into technicien(codeT_T,mdp,prenom,nom,mail) Values
+(1, "mdpdelamort", "Thierry", "Mergoulin", "merg@gmail.com"),
+(2, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
 
 insert into contrat values
 (1, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
 
 insert into periode values
+(1, "2016-11-27", "2017-05-21"),
 (1, "2015-01-03", "2015-06-21");
 
-insert into reservation values
-(1, 1, 1, 1, "OK", "2016-01-06"),
-(2, 2, 2, 2, "OK", "2016-02-06"),
-(3, 3, 3, 3, "OK", "2016-01-06"),
-(4, 4, 4, 4, "OK", "2018-02-06"),
-(5, 5, 5, 5, "OK", "2018-01-06"),
-(6, 6, 6, 6, "OK", "2016-02-06"),
-(7, 1, 1, 1, "OK", "2018-01-06");
-*/
+insert into type_intervention(codeT_I,libelle) Values
+(1,"réparation légère"),
+(2,"réparation lourde");
+
+insert into intervention(codeT_I,duree,commentaire,etat) Values
+(1,"...","réparation légère sur engin à moteur", "en cours"),
+(2,"...","grosse réparation sur un moteur de mixeur ", "à venir");
+
