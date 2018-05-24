@@ -164,10 +164,10 @@ create table motiver
 create table intervenir
  (
    codeI int(5) not null,
-   codeL int(5) not null,
-   primary key(codeI,codeL),
+   codeM int(5) not null,
+   primary key(codeI,codeM),
    foreign key(codeI) references intervention(codeI),
-   foreign key(codeL) references location(codeL)
+   foreign key(codeM) references materiel(codeM)
  );
 
 
@@ -221,8 +221,9 @@ insert into technicien values
 /* 	ETC ... */
 
 insert into reservation values
-(null, "OK", 2018-05-24, 2018-08-06, 2018-05-24, null),
-(null, "Impossible", 2018-02-01, 2018-02-26, null, null);
+(null, "OK", 2018-05-24, 2018-08-06, 2018-05-24, 2018-07-30),
+(null, "OK", 2018-02-01, 2018-02-26, 2018-02-05, 2018-02-28);
 
 insert into contrat values
-(null, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
+(null, 1, "SOPRANO", "Contrat fini");
+
