@@ -11,7 +11,7 @@ create database location;
 create table type_intervention
   (
     codeT_I int(5) not null auto_increment,
-    libelle varchar(100),
+    libelle enum("Maintenance","Installation","Réparation"),
     primary key(codeT_I)
   );
 
@@ -67,7 +67,7 @@ create table  client
 create table type_materiel
  (
    codeT_M int(5) not null auto_increment,
-   designation varchar(50),
+   designation enum("Bricolage","Construction","Jardinage"),
    primary key(codeT_M) 
  );
 
@@ -81,7 +81,7 @@ create table materiel
    codeT_M int(5) not null,
    nom varchar(25),
    notice varchar(150),
-   prix float(5.2),
+   prix float(6.2),
    poids float(5.2),
    primary key(codeM),
    foreign key(codeT_M) references type_materiel(codeT_M)
@@ -93,8 +93,8 @@ create table materiel
 
 create table type_technicien
  (
-   codeT_T int(5) not null,
-   libelle varchar(50),
+   codeT_T int(5) not null auto_increment,
+   libelle enum("Mainteneur","Installateur","Réparateur"),
    primary key(codeT_T) 
  );
 
@@ -107,21 +107,11 @@ create table technicien
    codeT int(5) not null auto_increment,
    codeT_T int(5) not null,
    mdp varchar(50),
-   prenom varchar(25),
    nom varchar(25),
+   prenom varchar(25),
    mail varchar(50),
    primary key(codeT),
    foreign key(codeT_T) references type_technicien(codeT_T)
- );
-
-# -----------------------------------------------------------------------------
-#       TABLE : LOCATION
-# -----------------------------------------------------------------------------
-
-create table location
- (
-   codeL int(5) not null auto_increment,
-   primary key(codeL) 
  );
 
 # -----------------------------------------------------------------------------
@@ -145,19 +135,17 @@ create table reservation
 
 create table contrat
  (
-   codeC int(5) not null auto_increment,
+   code_contrat int(5) not null auto_increment,
    codeR int(5) not null,
-   codeL int(5) not null,
    signature varchar(50),
    etat varchar(50),
-   primary key(codeC),
-   foreign key(codeR) references reservation(codeR),
-   foreign key(codeL) references location(codeL)
+   primary key(code_contrat),
+   foreign key(codeR) references reservation(codeR)
  );
 
 
 # -----------------------------------------------------------------------------
-#       TABLE : TYPE_INTERVENTION <=> INTERVENTION
+#       TABLE : (CONCERNER) MATERIEL <=> RESERVATION
 # -----------------------------------------------------------------------------
 
 create table motiver
@@ -170,7 +158,7 @@ create table motiver
  );
 
 # -----------------------------------------------------------------------------
-#       TABLE : INTERVENTION <=> LOCATION
+#       TABLE : (INTERVENIR) INTERVENTION <=> MATERIEL
 # -----------------------------------------------------------------------------
 
 create table intervenir
@@ -182,52 +170,59 @@ create table intervenir
    foreign key(codeL) references location(codeL)
  );
 
-# -----------------------------------------------------------------------------
-#       TABLE : RESERVATION <=> CLIENT
-# -----------------------------------------------------------------------------
 
-create table porter
- (
-   codeR int(5) not null,
-   codeC int(5) not null,
-   primary key(codeR,codeC),
-   foreign key(codeR) references reservation(codeR),
-   foreign key(codeC) references client(codeC)
- );
 
-/*
+/* 	INSERT */
+
+
+
+/* 	INTERVENTION */
+
+insert into type_intervention values
+(null,"Maintenance"),
+(null,"Réparation"),
+(null,"Installation");
+
+insert into intervention values
+(null, 1, 2.30, "RAS", "Fini");
+
+/* 	CLIENT */
+
 insert into type_client values
-(1,"Particulier"),
-(2,"Professionnelle");
+(null,"Professionnelle"),
+(null,"Particulier"),
+(null,"Entreprise");
 
 insert into client values
-,2,"motdepasse1","jean655@hotmail.com","DUPONT","Jean-Mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
-,2,"motdepasse2","massala111@hotmail.com","OUALA","Jean-Massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
-,2,"motdepasse3","jm_soprano@hotmail.com","SOPRANO","Michel","1 place de Renault","75018","0105748212","1991-08-01");
+(null,1,"mdp123","a@gmail.com","JEAN","Paul","157 Rue de la Chouette","21000","0652216408","1995-09-08"),
+(null,2,"mdp123","b@gmail.com","SKOIZER","Sidney","158 Rue de la Chouette","21000","0621640865","1991-01-03"),
+(null,3,"mdp123","c@gmail.com","HULOT","Nicolas","159 Rue de la Chouette","21000","0652216408","1982-09-08");
+
+/* 	MATERIEL */
 
 insert into type_materiel values
-(1, "Bricolage"),
-(2, "Construction"),
-(3, "Jardinage");
+(null,"Bricolage"),
+(null,"Construction"),
+(null,"Jardinage");
 
 insert into materiel values
-(1, 1, "Marteau-piqueur", "Ne pas manger cru", "110,99", "18");
+(null, 2, "Marteau-piqueur", "Attention au bruit", "110.99", "18.4");
+
+/* 	TECHNICIEN */
+
+insert into type_technicien values
+(null,"Mainteneur"),
+(null,"Réparateur"),
+(null,"Installateur");
 
 insert into technicien values
-(1, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
+(null, 1, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
 
-insert into contrat values
-(1, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
-
-insert into periode values
-(1, "2015-01-03", "2015-06-21");
+/* 	ETC ... */
 
 insert into reservation values
-(1, 1, 1, 1, "OK", "2016-01-06"),
-(2, 2, 2, 2, "OK", "2016-02-06"),
-(3, 3, 3, 3, "OK", "2016-01-06"),
-(4, 4, 4, 4, "OK", "2018-02-06"),
-(5, 5, 5, 5, "OK", "2018-01-06"),
-(6, 6, 6, 6, "OK", "2016-02-06"),
-(7, 1, 1, 1, "OK", "2018-01-06");
-*/
+(null, "OK", 2018-05-24, 2018-08-06, 2018-05-24, null),
+(null, "Impossible", 2018-02-01, 2018-02-26, null, null);
+
+insert into contrat values
+(null, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
