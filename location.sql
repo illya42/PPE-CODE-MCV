@@ -239,8 +239,8 @@ insert into technicien values
 /*  ETC ... */
 
 insert into reservation values
-(null, "OK", 2018-05-24, 2018-08-06, 2018-05-24, null),
-(null, "Impossible", 2018-02-01, 2018-02-26, null, null);
+(null, "OK", "2018-05-24", "2018-08-06", "2018-05-24", null),
+(null, "Impossible", "2018-02-01", "2018-02-26", null, null);
 
 insert into contrat values
 (null, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
