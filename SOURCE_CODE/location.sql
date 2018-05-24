@@ -14,7 +14,6 @@ create table type_intervention
     libelle enum("Maintenance","Installation","Réparation"),
     primary key(codeT_I)
   );
-
 # -----------------------------------------------------------------------------
 #       TABLE : INTERVENTION
 # -----------------------------------------------------------------------------
@@ -81,7 +80,7 @@ create table materiel
    codeT_M int(5) not null,
    nom varchar(25),
    notice varchar(150),
-   prix float(6.2),
+   prix float(5.2),
    poids float(5.2),
    primary key(codeM),
    foreign key(codeT_M) references type_materiel(codeT_M)
@@ -93,7 +92,7 @@ create table materiel
 
 create table type_technicien
  (
-   codeT_T int(5) not null auto_increment,
+   codeT_T int(5) not null,
    libelle enum("Mainteneur","Installateur","Réparateur"),
    primary key(codeT_T) 
  );
@@ -107,12 +106,13 @@ create table technicien
    codeT int(5) not null auto_increment,
    codeT_T int(5) not null,
    mdp varchar(50),
-   nom varchar(25),
    prenom varchar(25),
+   nom varchar(25),
    mail varchar(50),
    primary key(codeT),
    foreign key(codeT_T) references type_technicien(codeT_T)
  );
+
 
 # -----------------------------------------------------------------------------
 #       TABLE : RESERVATION
@@ -143,9 +143,8 @@ create table contrat
    foreign key(codeR) references reservation(codeR)
  );
 
-
 # -----------------------------------------------------------------------------
-#       TABLE : (CONCERNER) MATERIEL <=> RESERVATION
+#       TABLE : TYPE_INTERVENTION <=> INTERVENTION
 # -----------------------------------------------------------------------------
 
 create table motiver
@@ -158,7 +157,7 @@ create table motiver
  );
 
 # -----------------------------------------------------------------------------
-#       TABLE : (INTERVENIR) INTERVENTION <=> MATERIEL
+#       TABLE : INTERVENTION <=> LOCATION
 # -----------------------------------------------------------------------------
 
 create table intervenir
@@ -170,59 +169,51 @@ create table intervenir
    foreign key(codeL) references location(codeL)
  );
 
+insert into reservation(etat,dateD,dateF,date_retrait,date_depot) Values
+("OK","2015-01-01","2015-11-11","2015-02-01","2015-11-11"),
+("OK","2016-12-26","2017-05-21","2016-12-26","2017-05-21");
 
 
-/* 	INSERT */
 
+insert into type_client(codeT_C,libelle) Values
+(1,"Particulier"),
+(2,"Professionnelle");
 
+insert into client(codeT_C,mdpc,mail,nom,prenom,adresse,cp,tel,datenaiss) Values
 
-/* 	INTERVENTION */
+(2,"motdepasse1","jean655@hotmail.com","DUPONT","Jean-Mouloud","17 rue des Behenes","93120","0105648212","1994-08-01"),
+(2,"motdepasse2","massala111@hotmail.com","OUALA","Jean-Massala","17 rue des Gazelles","75002","0105648512","2000-08-01"),
+(2,"motdepasse3","jm_soprano@hotmail.com","SOPRANO","Michel","1 place de Renault","75018","0105748212","1991-08-01");
 
-insert into type_intervention values
-(null,"Maintenance"),
-(null,"Réparation"),
-(null,"Installation");
+insert into type_materiel(codeT_M,designation) Values
+(1, "Bricolage"),
+(2, "Construction"),
+(3, "Jardinage");
 
-insert into intervention values
-(null, 1, 2.30, "RAS", "Fini");
+insert into materiel(codeM,codeT_M,nom,notice,prix,poids) Values
+(1, 1, "Marteau-piqueur", "Ne pas manger cru", "110,99", "18");
+(2, 2, "Mixeur", "Bien mixer", "249", "19");
 
-/* 	CLIENT */
+insert into type_technicien(codeT_T,libelle) Values
+(1,"technicien de terrain"),
+(2,"technicien de..");
 
-insert into type_client values
-(null,"Professionnelle"),
-(null,"Particulier"),
-(null,"Entreprise");
-
-insert into client values
-(null,1,"mdp123","a@gmail.com","JEAN","Paul","157 Rue de la Chouette","21000","0652216408","1995-09-08"),
-(null,2,"mdp123","b@gmail.com","SKOIZER","Sidney","158 Rue de la Chouette","21000","0621640865","1991-01-03"),
-(null,3,"mdp123","c@gmail.com","HULOT","Nicolas","159 Rue de la Chouette","21000","0652216408","1982-09-08");
-
-/* 	MATERIEL */
-
-insert into type_materiel values
-(null,"Bricolage"),
-(null,"Construction"),
-(null,"Jardinage");
-
-insert into materiel values
-(null, 2, "Marteau-piqueur", "Attention au bruit", "110.99", "18.4");
-
-/* 	TECHNICIEN */
-
-insert into type_technicien values
-(null,"Mainteneur"),
-(null,"Réparateur"),
-(null,"Installateur");
-
-insert into technicien values
-(null, 1, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
-
-/* 	ETC ... */
-
-insert into reservation values
-(null, "OK", 2018-05-24, 2018-08-06, 2018-05-24, null),
-(null, "Impossible", 2018-02-01, 2018-02-26, null, null);
+insert into technicien(codeT_T,mdp,prenom,nom,mail) Values
+(1, "mdpdelamort", "Thierry", "Mergoulin", "merg@gmail.com"),
+(2, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
 
 insert into contrat values
-(null, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
+(1, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
+
+insert into periode values
+(1, "2016-11-27", "2017-05-21"),
+(1, "2015-01-03", "2015-06-21");
+
+insert into type_intervention(codeT_I,libelle) Values
+(1,"réparation légère"),
+(2,"réparation lourde");
+
+insert into intervention(codeT_I,duree,commentaire,etat) Values
+(1,2.30,"réparation légère sur engin à moteur", "en cours"),
+(2,5.25,"grosse réparation sur un moteur de mixeur ", "à venir");
+
