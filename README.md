@@ -22,3 +22,9 @@
 
 * RESERVATION
 ==> supprimer / éditer => dans DEBUG
+
+FAIRE REQUETE :
+
+Choisir un technicien / Choisir un mois / annee ==> Montrer le NOMBRE d'intervention
+
+Choisir un materiel / Choisir un mois / annee ==> Montrer le NOMBRE d'intervention / le NOMBRE de réservation
