@@ -1,3 +1,4 @@
+
 drop database location;
 create database location;
 
@@ -164,19 +165,19 @@ create table motiver
 create table intervenir
  (
    codeI int(5) not null,
-   codeM int(5) not null,
-   primary key(codeI,codeM),
+   codeL int(5) not null,
+   primary key(codeI,codeL),
    foreign key(codeI) references intervention(codeI),
-   foreign key(codeM) references materiel(codeM)
+   foreign key(codeL) references location(codeL)
  );
 
 
 
-/* 	INSERT */
+/*  INSERT */
 
 
 
-/* 	INTERVENTION */
+/*  INTERVENTION */
 
 insert into type_intervention values
 (null,"Maintenance"),
@@ -184,9 +185,15 @@ insert into type_intervention values
 (null,"Installation");
 
 insert into intervention values
-(null, 1, '10:02:30', "RAS", "Fini");
+(null, 1, "2.30.00", "RAS", "Fini"),
+(null, 2, "0.30.00", "Manque outil adéquat", "Fini"),
+(null, 3, "1:00:00", "Moins de temps que prévu", "Fini"),
+(null, 2, "00:10:00", "Remplacement du matériel du client par un neuf", "Fini"),
+(null, 1, "5:15:00", "Changement de pièce sur l'engin", "Fini"),
+(null, 3, "1:00:00", "RAS", "Fini"),
+(null, 1, "00:00:00", "En Cours", "En Cours");
 
-/* 	CLIENT */
+/*  CLIENT */
 
 insert into type_client values
 (null,"Professionnelle"),
@@ -195,20 +202,26 @@ insert into type_client values
 
 insert into client values
 (null,1,"mdp123","a@gmail.com","JEAN","Paul","157 Rue de la Chouette","21000","0652216408","1995-09-08"),
-(null,2,"mdp123","b@gmail.com","SKOIZER","Sidney","158 Rue de la Chouette","21000","0621640865","1991-01-03"),
-(null,3,"mdp123","c@gmail.com","HULOT","Nicolas","159 Rue de la Chouette","21000","0652216408","1982-09-08");
+(null,2,"mdp132","b@gmail.com","SKOIZER","Sidney","158 Rue de la Chouette","21000","0621640865","1991-01-03"),
+(null,3,"mdp321","c@gmail.com","HULOT","Nicolas","159 Rue de la Chouette","21000","0652216408","1982-09-08"),
+(null,2,"mdp231","d@gmail.com", "MORETI","Remy","34 Rue de la Marche","75016", "0654287689", "1975-03-12");
 
-/* 	MATERIEL */
+/*  MATERIEL */
 
 insert into type_materiel values
 (null,"Bricolage"),
-(null,"Construction"),
+(null,"Engin de chantier"),
 (null,"Jardinage");
 
 insert into materiel values
-(null, 2, "Marteau-piqueur", "Attention au bruit", "110.99", "18.4");
+(null, 1, "Marteau-piqueur", "Puissance : 1700W - Force de Frappe : 60 joules - Livré en coffret métallique avec 2 burins - Grantie de 3 ans", "149.99e", "16kg"),
+(null, 3, "Tuyau d'arrosage nu", "Résistant aux UV : oui - Matière du tuyau : PVC - Garantie : 30 ans - Longueur : 50m - Diamètre intérieur : 18.5mm - Diamètre extérieur : 23mm","74.99e","11.062 kg"),
+(null, 2, "Pelleteuse", "Profondeur d'excavation max : 6.20m - Energie : Diesel - Hauteur : 3.01m - Longeur : 9.42m - Largeur : 2.98m - Pour le creusement de tranchées, les travaux de démolition, le remblaiement, les travaux lourds", "1220e/j","22t"),
+(null, 2, "Bétonnière", "Energie : Electrique - Capacité : 160l" - "Matière principale : Acier - Usage : petit chantier", "229.00e", "46kg"),
+(null, 2, "Brouette de chantier", "Matière principale : Acier - Diamètre roue : 400mm - châssis formant pare-choc - Garantie : 2 ans : Contenance : 100l/200kg", "55e", "10kg"),
+(null, 3, "Brouette Jardinage", "Matière principale : résine - Dimension : L.111xl68.5xh.60cm - Garantie : 1an", "39.95e", "12kg");
 
-/* 	TECHNICIEN */
+/*  TECHNICIEN */
 
 insert into type_technicien values
 (null,"Mainteneur"),
@@ -216,12 +229,16 @@ insert into type_technicien values
 (null,"Installateur");
 
 insert into technicien values
-(null, 1, "motdepasse4", "George", "MICHAEL", "gm@gmail.com");
+(null, 1, "motdepasse4", "George", "MICHAEL", "gm@gmail.com"),
+(null, 2, "motdepasse3", "Charles", "DUPONT", "cd@gmail.com"),
+(null, 3, "motde passe2", "Henri", "DUROI", "hdr@gmail.com"),
+(null, 2, "motdepasse1", "Ahmed", "BENALI", "aba@gmial.com");
 
-/* 	ETC ... */
+/*  ETC ... */
 
 insert into reservation values
-(null, "OK", '2018-05-24', '2018-08-06', '2018-05-24', '2018-07-30'),
-(null, "OK", '2018-02-01', '2018-02-26', '2018-02-05', '2018-02-28');
+(null, "OK", 2018-05-24, 2018-08-06, 2018-05-24, null),
+(null, "Impossible", 2018-02-01, 2018-02-26, null, null);
 
-
+insert into contrat values
+(null, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
