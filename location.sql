@@ -24,11 +24,13 @@ create table intervention
  (
    codeI int(5) not null auto_increment,
    codeT_I int(5) not null,
+   codeT int(5) not null,
    duree time,
    commentaire varchar(100),
    etat varchar(50),
    primary key(codeI),
-   foreign key(codeT_I) references type_intervention(codeT_I)
+   foreign key(codeT_I) references type_intervention(codeT_I),
+   foreign key(codeT) references technicien(codeT)
  );
 
 # -----------------------------------------------------------------------------
