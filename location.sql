@@ -184,7 +184,7 @@ insert into type_intervention values
 (null,"Installation");
 
 insert into intervention values
-(null, 1, 2.30, "RAS", "Fini");
+(null, 1, '10:02:30', "RAS", "Fini");
 
 /* 	CLIENT */
 
@@ -221,9 +221,7 @@ insert into technicien values
 /* 	ETC ... */
 
 insert into reservation values
-(null, "OK", 2018-05-24, 2018-08-06, 2018-05-24, 2018-07-30),
-(null, "OK", 2018-02-01, 2018-02-26, 2018-02-05, 2018-02-28);
+(null, "OK", '2018-05-24', '2018-08-06', '2018-05-24', '2018-07-30'),
+(null, "OK", '2018-02-01', '2018-02-26', '2018-02-05', '2018-02-28');
 
-insert into contrat values
-(null, 1, "SOPRANO", "Contrat fini");
 
