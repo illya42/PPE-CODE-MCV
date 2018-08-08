@@ -188,10 +188,14 @@ insert into client(codeT_C,mdpc,mail,nom,prenom,adresse,cp,tel,datenaiss) Values
 insert into type_materiel(codeT_M,designation) Values
 (1, "Bricolage"),
 (2, "Construction"),
-(3, "Jardinage");
+(3, "Jardinage"),
+(4, "Outils");
 
 insert into materiel(codeM,codeT_M,nom,notice,prix,poids) Values
 (1, 1, "Marteau-piqueur", "Ne pas manger cru", "110,99", "18");
+(1, 3, "Tuyau d'arrosage", "Pour arroser tmtc", "34,90", "5"),
+(1, 4, "Pince", "Pour pincer, peut faire mal", "12,90", "1"),
+(2, 3, "Rien", "Pour rien", "1234", "12345"),
 (2, 2, "Mixeur", "Bien mixer", "249", "19");
 
 insert into type_technicien(codeT_T,libelle) Values
