@@ -80,7 +80,7 @@ create table materiel
    codeT_M int(5) not null,
    nom varchar(25),
    notice varchar(150),
-   prix float(5.2),
+   prix float(5.3),
    poids float(5.2),
    primary key(codeM),
    foreign key(codeT_M) references type_materiel(codeT_M)
@@ -192,11 +192,11 @@ insert into type_materiel(codeT_M,designation) Values
 (4, "Outils");
 
 insert into materiel(codeM,codeT_M,nom,notice,prix,poids) Values
-(1, 1, "Marteau-piqueur", "Ne pas manger cru", "110,99", "18");
-(1, 3, "Tuyau d'arrosage", "Pour arroser tmtc", "34,90", "5"),
-(1, 4, "Pince", "Pour pincer, peut faire mal", "12,90", "1"),
-(2, 3, "Rien", "Pour rien", "1234", "12345"),
-(2, 2, "Mixeur", "Bien mixer", "249", "19");
+(1, 1, "Marteau-piqueur", "Ne pas manger cru", "110.99", "18"),
+(3, 3, "Tuyau d'arrosage", "Pour arroser tmtc", "34.90", "5"),
+(2, 2, "Pince", "Pour pincer, peut faire mal", "12.90", "1"),
+(4, 3, "Rien", "Pour rien", "1234", "12345"),
+(6, 2, "Mixeur", "Bien mixer", "249", "19");
 
 insert into type_technicien(codeT_T,libelle) Values
 (1,"technicien de terrain"),
@@ -209,10 +209,6 @@ insert into technicien(codeT_T,mdp,prenom,nom,mail) Values
 insert into contrat values
 (1, "2015-01-03", "2015-06-21", "SOPRANO", "Contrat fini");
 
-insert into periode values
-(1, "2016-11-27", "2017-05-21"),
-(1, "2015-01-03", "2015-06-21");
-
 insert into type_intervention(codeT_I,libelle) Values
 (1,"réparation légère"),
 (2,"réparation lourde");
@@ -220,4 +216,3 @@ insert into type_intervention(codeT_I,libelle) Values
 insert into intervention(codeT_I,duree,commentaire,etat) Values
 (1,2.30,"réparation légère sur engin à moteur", "en cours"),
 (2,5.25,"grosse réparation sur un moteur de mixeur ", "à venir");
-
