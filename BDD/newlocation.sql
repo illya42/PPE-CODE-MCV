@@ -250,9 +250,9 @@ insert into materiel values
 
 /*  ETC ... */
 
-/*insert into reservation values
-(null, "OK", '2018-05-24', '2018-08-06', '2018-05-24', null),
-(null, "Impossible", '2018-02-01', '2018-02-26', null, null);*/
+insert into reservation values
+(null, 1, "OK", '2018-05-24', '2018-08-06', '2018-05-24', null),
+(null, 3, "Impossible", '2018-02-01', '2018-02-26', null, null);
 
 insert into contrat values
 (null, 1,"SOPRANO", "Contrat fini");
