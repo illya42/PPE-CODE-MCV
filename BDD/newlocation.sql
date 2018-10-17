@@ -28,7 +28,7 @@ create table technicien
    mdp varchar(50),
    nom varchar(25),
    prenom varchar(25),
-   mail varchar(50),
+   mailt varchar(50),
    primary key(codeT),
    foreign key(codeT_T) references type_technicien(codeT_T)
  )default charset='utf8';
