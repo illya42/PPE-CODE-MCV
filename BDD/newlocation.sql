@@ -114,6 +114,7 @@ create table materiel
    notice varchar(255),
    prix float(6.2),
    poids float(5.2),
+   stock int(2),
    primary key(codeM),
    foreign key(codeT_M) references type_materiel(codeT_M)
  )default charset='utf8';
@@ -241,12 +242,12 @@ insert into client values
 /* MATERIEL */
 
 insert into materiel values
-(null, 1, "Marteau-piqueur", "1700W 60 joules - Livré en coffret métallique avec 2 burins - Grantie de 3 ans", 149.99, 16),
-(null, 3, "Tuyau d'arrosage nu", "Resistant aux UV - PVC - 50m - Diametre intérieur 18.5mm - Diametre extérieur 23mm",74.99,11.062),
-(null, 2, "Pelleteuse", "Profondeur d'excavation max 6.20m - Diesel - Hauteur 3.01m - Longeur 9.42m - Largeur 2.98m", 1220,22000),
-(null, 2, "Betonnière", "Energie : Electrique - Capacite : 160l Matière principale : Acier - Usage : petit chantier", 229.00, 46),
-(null, 2, "Brouette de chantier", "Acier - Diametre roue 400mm - Contenance 100l/200kg", 55, 10),
-(null, 3, "Brouette Jardinage", "Resine - Dimension 111x68 5x68 60cm", 39.95, 12);
+(null, 1, "Marteau-piqueur", "1700W 60 joules - Livré en coffret métallique avec 2 burins - Grantie de 3 ans", 149.99, 16, 3),
+(null, 3, "Tuyau d'arrosage nu", "Resistant aux UV - PVC - 50m - Diametre intérieur 18.5mm - Diametre extérieur 23mm",74.99,11.062, 5),
+(null, 2, "Pelleteuse", "Profondeur d'excavation max 6.20m - Diesel - Hauteur 3.01m - Longeur 9.42m - Largeur 2.98m", 1220,22000, 1),
+(null, 2, "Betonnière", "Energie : Electrique - Capacite : 160l Matière principale : Acier - Usage : petit chantier", 229.00, 46, 4),
+(null, 2, "Brouette de chantier", "Acier - Diametre roue 400mm - Contenance 100l/200kg", 55, 10, 5),
+(null, 3, "Brouette Jardinage", "Resine - Dimension 111x68 5x68 60cm", 39.95, 12, 2);
 
 /*  ETC ... */
 
