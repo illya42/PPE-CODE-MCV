@@ -22,25 +22,25 @@ $tableauNombreVentes = array();
 // ********************************************************************
 
 $sql = <<<EOF
-      SELECT  
-            DESIGNATION AS VILLE,
-            NBHAB AS NBR_HAB  
-      FROM `ville`
-      GROUP BY DESIGNATION
+	SELECT  
+		DESIGNATION AS VILLE,
+		NBHAB AS NBR_HAB  
+	FROM `ville`
+	GROUP BY DESIGNATION
 EOF;
 
-      /*
-      SELECT  
-            YEAR(`DTHR_VENTE`) AS ANNEE,
-            COUNT(ID) AS NBR_VENTES  
-      FROM `ventes`
-      GROUP BY YEAR(`DTHR_VENTE`)
+	/*
+	SELECT  
+		YEAR(`DTHR_VENTE`) AS ANNEE,
+		COUNT(ID) AS NBR_VENTES  
+	FROM `ventes`
+	GROUP BY YEAR(`DTHR_VENTE`)
 
-      SELECT
+	SELECT
         designation,nb
     FROM ville
     GROUP BY designation  
-      */
+	*/
 
 // Connexion à la BDD
 $mysqlCnx = @mysql_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS) or die('Pb de connxion mysql');
@@ -53,9 +53,9 @@ $mysqlQuery = @mysql_query($sql, $mysqlCnx) or die('Pb de requête');
 
 // Fetch sur chaque enregistrement
 while ($row = mysql_fetch_array($mysqlQuery,  MYSQL_ASSOC)) {
-      // Alimentation des tableaux de données
-      $tableauAnnees[] = 'Ville de ' . $row['VILLE'];
-      $tableauNombreVentes[] = $row['NBR_HAB'];
+	// Alimentation des tableaux de données
+	$tableauAnnees[] = 'Ville' . $row['VILLE'];
+	$tableauNombreVentes[] = $row['NBR_HAB'];
 }
 
 // ********************************************************************
@@ -63,10 +63,10 @@ while ($row = mysql_fetch_array($mysqlQuery,  MYSQL_ASSOC)) {
 // ********************************************************************
 
 // On spécifie la largeur et la hauteur du graphique conteneur&#160;
-$graph = new PieGraph(1000,1000);
+$graph = new PieGraph(400,300);
 
 // Titre du graphique
-//$graph->title->Set("Volume des ventes par années");
+$graph->title->Set("Volume des ventes par années");
 
 // Créer un graphique secteur (classe PiePlot)
 $oPie = new PiePlot($tableauNombreVentes);
@@ -78,8 +78,6 @@ $oPie->SetLegends($tableauAnnees);
 $oPie->SetCenter(0.4); 
 
 $oPie->SetValueType(PIE_VALUE_ABS);
-
-$graph->img->SetMargin(80,50,40,40);
 
 // Format des valeurs de type entier
 $oPie->value->SetFormat('%d');

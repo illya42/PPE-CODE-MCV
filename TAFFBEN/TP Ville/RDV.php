@@ -129,11 +129,11 @@ input[type=submit]:hover {
             <option value="Strasbourg">Strasbourg</option>
             <option value="Toulouse">Toulouse</option>
             <option value="Bordeaux">Bordeaux</option>
-            <option value="Vaucresson">Vaucresson</option>
+            <option value="Amsterdam">Amsterdam</option>
             <option value="Rouen">Rouen</option>
             <option value="Deauville">Deauville</option>
             <option value="Mulhouse">Mulhouse</option>
-            <option value="Persan">Persan</option>
+            <option value="Londres">Londres</option>
         </select>
         </td></tr>
 
