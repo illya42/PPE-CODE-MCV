@@ -16,7 +16,7 @@ create table ville
       nom varchar(15),
       prenom varchar(15),
       ville enum('Paris', 'Bruxelles', 'Strasbourg', 'Toulouse', 'Bordeaux', 'Vaucresson', 'Rouen',
-        'Deauville', 'Mulhouse', '^Persan'),
+        'Deauville', 'Mulhouse', 'Persan'),
       primary key (id)
       );
 
