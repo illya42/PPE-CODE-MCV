@@ -18,6 +18,58 @@
 
     <link href="css/style.css" rel="stylesheet">
 
+
+    <style>
+input[type=text], select, input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #15247c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: black;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #15247c;
+    color: white;
+}
+
+</style>
+
   </head>
 
   <body>
@@ -58,6 +110,45 @@
             </td>
           </tr>
         </table>
+
+        <!--  Debut formulaire -->
+        </br>
+        </br>
+        </br>
+        <form method="POST" action="">
+        <table id="customers">
+
+     
+    <tr><td>   Nom :   </td><td><input type="text" placeholder="Votre nom" name="nom" value = "nom"> </td></tr>
+
+    <tr><td>   Prénom :   </td><td><input type="text" placeholder="Votre prénom" name="prenom" value = "prenom"> </td></tr>
+
+    <tr><td>   Ville : </td><td><select name="ville">
+            <option value="Paris">Paris</option>
+            <option value="Bruxelles">Bruxelles</option>
+            <option value="Strasbourg">Strasbourg</option>
+            <option value="Toulouse">Toulouse</option>
+            <option value="Bordeaux">Bordeaux</option>
+            <option value="Vaucresson">Vaucresson</option>
+            <option value="Rouen">Rouen</option>
+            <option value="Deauville">Deauville</option>
+            <option value="Mulhouse">Mulhouse</option>
+            <option value="Persan">Persan</option>
+        </select>
+        </td></tr>
+
+    <tr>
+      <td>
+      </td>
+      <td>
+    <input type = "submit" value="Valider" />
+</td>
+</tr>
+</table>
+</form>
+
+        <!--  Fin formulaire -->
+
     </center>
     </footer>
 
