@@ -4,7 +4,7 @@ create database tpville;
 
 create table ville
   (
-    idV int(6) not null,
+    idV int(6) not null auto_increment,
     designation varchar(50),
     nbHab int(12),
     primary key (idV)
@@ -15,17 +15,19 @@ create table ville
       id int(3) not null auto_increment,
       nom varchar(15),
       prenom varchar(15),
+      ville enum('Paris', 'Bruxelles', 'Strasbourg', 'Toulouse', 'Bordeaux', 'Vaucresson', 'Rouen',
+        'Deauville', 'Mulhouse', '^Persan'),
       primary key (id)
-      )
+      );
 
   insert into ville values
-  	(1, "Paris", 12532901),
-  	(2, "Bruxelles", 1192243),
-  	(3, "Strasbourg", 271782),
-  	(4, "Toulouse", 441802),
-  	(5, "Bordeaux", 239157),
-  	(6, "Vaucresson", 8670),
-  	(7, "Rouen", 110933),
-  	(8, "Deauville", 4364),
-  	(9, "Mulhouse", 109588),
-  	(10, "Persan", 10250);
+  	(null, "Paris", 12532901),
+  	(null, "Bruxelles", 1192243),
+  	(null, "Strasbourg", 271782),
+  	(null, "Toulouse", 441802),
+  	(null, "Bordeaux", 239157),
+  	(null, "Vaucresson", 8670),
+  	(null, "Rouen", 110933),
+  	(null, "Deauville", 4364),
+  	(null, "Mulhouse", 109588),
+  	(null, "Persan", 10250);
