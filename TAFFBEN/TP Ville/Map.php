@@ -70,10 +70,25 @@
 			var lat = 48.852969;
 			var lon = 2.349903;
 			var macarte = null;
+
+			// Nous initialisons une liste de marqueurs
+			var villes = {
+				"<center>Paris </br> <center>12532901 hab": { "lat": 48.852969, "lon": 2.349903 },
+				"<center>Bruxelles </br> <center>1192243 hab": { "lat": 50.8503396, "lon": 4.351710300000036 },
+				"<center>Strasbourg </br> <center>271782 hab": { "lat": 48.5734, "lon": 7.7521},
+				"<center>Toulouse </br> <center>441802 hab": { "lat": 43.6042, "lon": 1.4436 },
+				"<center>Bordeaux </br> <center>239157 hab": { "lat": 44.8377, "lon": -0.5791 },
+				"<center>Londres </br> <center>8787654 hab": { "lat": 51.5073, "lon": -0.1277 },
+				"<center>Rouen </br> <center>110933 hab": { "lat": 49.4432, "lon": 1.0999 },
+				"<center>Deauville </br> <center>4364 hab": { "lat": 49.3539, "lon": 0.0751 },
+				"<center>Mulhouse </br> <center>109588 hab": { "lat": 47.7508, "lon": 7.3358 },
+				"<center>Amsterdam </br> <center>1351587 hab": { "lat": 52.3679, "lon": 4.9035 }
+			};
+
 			// Fonction d'initialisation de la carte
 			function initMap() {
 				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-                macarte = L.map('map').setView([lat, lon], 11);
+                macarte = L.map('map').setView([lat, lon], 5.4);
                 // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
                 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
                     // Il est toujours bien de laisser le lien vers la source des données
@@ -81,11 +96,17 @@
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(macarte);
+                    for (ville in villes) {
+        var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+       		// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
+			marker.bindPopup(ville);
+    }
             }
 			window.onload = function(){
 				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 				initMap(); 
 			};
+
 		</script>
 		<style type="text/css">
 			#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
@@ -101,9 +122,7 @@
 
           <!--	Fin map	-->
 
-          <!--	Début marqueurs	-->
-          <script>var marker = L.marker([48.866667, 2.333333]).addTo(macarte);</script>	
-          <!--	Fin marqueurs	-->
+
 
         </table>
     </center>
