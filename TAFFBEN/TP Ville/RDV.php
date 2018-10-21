@@ -152,6 +152,19 @@ input[type=submit]:hover {
     </center>
     </footer>
 
+    <?php 
+    if(isset($_POST['Valider']))
+                {
+                    $tabCli['nom']=$_POST['nom'];
+                    $tabCli['prenom']=$_POST['prenom'];
+                    $tabCli['ville']=$_POST['ville'];
+
+                    $unC->setTable('RDV');
+                    $unC->insert($tabCli);
+                    echo"Le rendez-vous a été prit !";
+                }
+     ?>
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

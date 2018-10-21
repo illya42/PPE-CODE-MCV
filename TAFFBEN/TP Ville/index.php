@@ -61,11 +61,11 @@
             </br>
               Réaliser en PHP:
               </br>
-              1.représentation graphique sous forme de courbes ou histogrammes ou autre la liste des villes (axe nb habitants)
+              1.Représentation graphique sous forme de courbes ou histogrammes ou autre la liste des villes (axe nb habitants)
               </br>
-              2.implementer une map hgoogle et représenter toutes les villes dans la map ave des marqueurs (nom ville, nb habitanats)
+              2.Implementer une map hgoogle et représenter toutes les villes dans la map ave des marqueurs (nom ville, nb habitanats)
               </br>
-              3.implementer API calendrier et un formulaire de saisie de rdv dans une ville, le rdv est ajouté au calendreier
+              3.Implementer API calendrier et un formulaire de saisie de rdv dans une ville, le rdv est ajouté au calendreier
             </b>
             </td>
           </tr>

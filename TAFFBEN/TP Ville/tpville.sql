@@ -14,7 +14,6 @@ create table ville
     (
       id int(3) not null auto_increment,
       nom varchar(15),
-      dateRDV date,
       prenom varchar(15),
       ville enum('Paris', 'Bruxelles', 'Strasbourg', 'Toulouse', 'Bordeaux', 'Londres', 'Rouen',
         'Deauville', 'Mulhouse', 'Amsterdam'),
